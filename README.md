@@ -10,7 +10,7 @@
 >>点击右侧链接访问页面  https://isjgh.com/to_login  
 * 4.微信小程序（整个项目使用web-view内联到小程序里）
 >>扫描下方小程序码查看
-.<img src="https://github.com/wzdnh/sjgh/blob/master/sjgh/img/4~H)DIMNRB%7D%7B76YZ4%7BASL)3.png" />
+<img src="https://github.com/wzdnh/sjgh/blob/master/sjgh/img/4~H)DIMNRB%7D%7B76YZ4%7BASL)3.png" />
 
 
 ## 功能介绍
