@@ -8,7 +8,8 @@
 * 2.手机端
 >   手机访问右侧网址  https://isjgh.com/mb_home/list
 * 3.后台管理
->   点击右侧链接访问页面  https://isjgh.com/to_login  
+>   点击右侧链接访问页面  https://isjgh.com/to_login
+>   账号：47  密码：000000
 * 4.微信小程序（整个项目使用web-view内联到小程序里）
 >   扫描下方小程序码查看
 <img src="https://github.com/wzdnh/sjgh/blob/master/sjgh/img/4~H)DIMNRB%7D%7B76YZ4%7BASL)3.png" />
@@ -51,7 +52,7 @@ V2.0.0</br>
     2.完善后台管理系统
     3.进行手机端的开发
     4.进行小程序端的开发
-V3.O.O</br>
+V3.0.0</br>
 
     1.优化已知的bug
     2.优化、完善小程序支付功能（由于我们这个小团队决定主要使用小程序进行推广，所以希望内联小程序可以实现支付）
