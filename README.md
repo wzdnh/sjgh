@@ -3,7 +3,7 @@
     一个交易有保障的大学生悬赏互助平台
 
 ## 简介
- * 技术： Spring、 Spring mvc、 MyBatis、 MySQL、 Tomcat、 Maven、 Jsp、 Servlet、 HTML、 css、 JavaScript、 jQuery、 jQuery Ajax、 PageHelper
+ * 技术： Spring、 Spring Mvc、 MyBatis、 MySQL、 Tomcat、 Maven、 Jsp、 Servlet、 HTML、 CSS、 JavaScript、 JQuery、 JQuery Ajax、 PageHelper、 WebSocket
  * 开发工具： IDEA、 微信web开发工具
  * 服务器： 阿里云服务器
 
