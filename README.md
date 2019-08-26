@@ -3,7 +3,7 @@
 
 ## 项目实例
 * PC端
-》点击右侧链接访问网站 www.https:isjgh.com
+>>点击右侧链接访问网站 www.https:isjgh.com
 * 手机端
 * 后台管理
 * 微信小程序（整个项目使用web-view内联到小程序里）
