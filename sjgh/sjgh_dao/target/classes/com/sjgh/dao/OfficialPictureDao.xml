@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--================================官方宣传图片，广告持久化操作映射==============================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.OfficialPictureDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="officialPicture" type="OfficialPicture">
+        <id property="picture_id" column="picture_id" javaType="int"/>
+        <result property="road" column="road" javaType="String"/>
+        <result property="school_id" column="school_id" javaType="Integer"/>
+        <result property="employee_id" column="employee_id" javaType="int"/>
+        <result property="money" column="money" javaType="Integer"/>
+        <result property="picture_describe" column="picture_describe" javaType="String"/>
+        <result property="size" column="size" javaType="String"/>
+        <result property="create_time" column="create_time" javaType="String"/>
+        <result property="end_time" column="end_time" javaType="String"/>
+        <result property="update_time" column="update_time" javaType="String"/>
+        <association property="school_er" column="school_id" javaType="School">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>
+        <!--关联员工表-->
+        <association property="employee_er" column="employee_id" javaType="Employee">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="employee_id" column="eid" javaType="int"/>
+            <result property="employee_name" column="ename" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <!--添加广告-->
+    <insert id="insert" parameterType="OfficialPicture" useGeneratedKeys="true" keyProperty="picture_id">
+        insert into official_picture
+              (road, school_id, employee_id, money, picture_describe, create_time, end_time, update_time)
+        values
+               (#{road}, #{school_id}, #{employee_id}, #{money}, #{picture_describe}, #{create_time}, #{end_time}, #{update_time})
+    </insert>
+
+    <select id="select" parameterType="int" resultMap="officialPicture">
+        select o.*, s.school_name sname, e.employee_name ename
+        from official_picture o
+                 left join school s on  s.school_id = o.school_id
+                 left join employee e on  e.employee_id = o.employee_id
+        where o.picture_id = #{picture_id}
+    </select>
+
+
+    <select id="selectRoad" parameterType="int" resultType="String">
+        select road
+        from official_picture
+        where picture_id = #{picture_id}
+    </select>
+
+    <!--parameterType 参数类型-->
+    <!--查找所有的官方宣传图、广告     ====所有的root级别=========-->
+    <select id="selectAll" parameterType="String" resultMap="officialPicture">
+        select o.*, s.school_name sname, e.employee_name ename
+        from official_picture o
+                 left join school s on  s.school_id = o.school_id
+                 left join employee e on  e.employee_id = o.employee_id
+    </select>
+
+    <!--查找所有官方宣传图片、广告      一个学校范围内的-->
+    <select id="selectAllBySchool" parameterType="Integer" resultMap="officialPicture">
+        select o.*, s.school_name sname, e.employee_name
+        from official_picture o
+                 left join school s on  s.school_id = o.school_id
+                 left join employee e on  e.employee_id = o.employee_id
+        where o.school_id = #{school_id}
+    </select>
+
+    <!--修改官方宣传图片、广告 信息  通过员工id     此处不更新图片路径，图片路径在其他的方法进行实现-->
+    <update id="update" parameterType="OfficialPicture">
+        update official_picture set  school_id = #{school_id},
+                             employee_id = #{employee_id} ,
+                             money = #{money},
+                             picture_describe = #{picture_describe},
+                             size = #{size}
+        where picture_id = #{picture_id}
+    </update>
+
+    <!--修改官方图片、广告-->
+    <update id="updatePicture" parameterType="OfficialPicture">
+        update official_picture set  road = #{road}
+        where picture_id = #{picture_id}
+    </update>
+
+</mapper>

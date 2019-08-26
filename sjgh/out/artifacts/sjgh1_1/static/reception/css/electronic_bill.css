@@ -1,0 +1,239 @@
+.lucky_money {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 35px;
+}
+
+.lucky_money_title_home {
+  width: 100%;
+  height: 42px;
+  background: rgb(238, 238, 238);
+}
+
+.lucky_money_title_home .lucky_money_title {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 80px;
+  height: 43px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 43px;
+  background: rgb(252, 252, 252);
+  border-right: 1px solid #707070;
+  /* border-bottom:3px solid #7C7C7C; */
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */
+}
+
+.lucky_money_detail_home {
+  height: 285px;
+  width: 100%;
+  overflow: scroll;
+  padding: 10px;
+}
+
+.title_status {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 120px;
+  height: 43px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 43px;
+}
+
+.title_typeOf_title {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 120px;
+  height: 43px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 43px;
+}
+
+.title_keyWord_title {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 140px;
+  height: 43px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 43px;
+}
+
+.title_money_number {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 90px;
+  height: 43px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 43px;
+}
+
+.title_other_description {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 330px;
+  height: 43px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 43px;
+}
+
+.title_manegement {
+  display: block;
+  float: left;
+  color: #7C7C7C;
+  width: 90px;
+  height: 43px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 43px;
+}
+
+.task_depription {
+  width: 922px;
+  height: 100px;
+  border: 1px solid #E4EAEE;
+  float: right;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.detail_status_green {
+  display: block;
+  float: left;
+  width: 120px;
+  line-height: 98px;
+  text-align: center;
+  color: #74d2d4;
+  font-size: 14px;
+}
+
+.detail_status_gray {
+  display: block;
+  float: left;
+  width: 120px;
+  line-height: 98px;
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+}
+
+.detail_status_orange {
+  display: block;
+  float: left;
+  width: 120px;
+  line-height: 98px;
+  text-align: center;
+  color: #ffc211;
+  font-size: 14px;
+}
+
+.detail_typeOf_title {
+  color: #7C7C7C;
+  display: block;
+  float: left;
+  width: 120px;
+  line-height: 98px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.detail_keyWord_title {
+  color: #7C7C7C;
+  display: block;
+  float: left;
+  width: 140px;
+  line-height: 98px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.detail_money_number {
+  color: #7C7C7C;
+  display: block;
+  float: left;
+  width: 90px;
+  line-height: 98px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.detail_other_description {
+  width: 330px;
+  height: 98px;
+  float: left;
+  overflow: hidden;
+}
+
+.detail_other_description img {
+  width: 89px;
+  height: 80px;
+  overflow: hidden;
+  float: left;
+  margin-top: 10px;
+  border: 1px solid #E4EAEE;
+  margin-left: 10px;
+}
+
+.detail_other_description_word {
+  color: #7C7C7C;
+  display: block;
+  height: 75px;
+  margin-top: 15px;
+  overflow: hidden;
+  float: left;
+  width: 170px;
+  text-align: center;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.detail_back {
+  width: 60px;
+  height: 30px;
+  color: white;
+  background: #ed6a5a;
+  font-size: 12px;
+  border-radius: 40px;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.detail_judge {
+  width: 60px;
+  height: 30px;
+  color: white;
+  background: #F4CD67;
+  font-size: 12px;
+  border-radius: 40px;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.ensure_accomplish {
+  width: 60px;
+  height: 30px;
+  color: white;
+  background: #58ab8b;
+  font-size: 12px;
+  border-radius: 40px;
+  border: none;
+  margin-bottom: 5px;
+}

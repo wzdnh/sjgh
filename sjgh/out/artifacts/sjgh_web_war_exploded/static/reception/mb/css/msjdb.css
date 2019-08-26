@@ -1,0 +1,460 @@
+body {
+  min-width: 375px;
+  min-height: 667px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 底部导航栏 陈嘉辉 20190504 18:01 */
+/* 底部导航栏start */
+/* 底部导航新修改 20190531 20:00 */
+#nav_bottom {
+  z-index: 999;
+  background: #F1F2F4;
+  width: 100%;
+  height: 48.5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.home, .sjdb, .swxz, .xzjy, .myself {
+  float: left;
+  width: 20%;
+  height: 48.5px;
+}
+
+/* 底部导航新修改 20190531 20:00 */
+.nav_keywords_orange {
+  font-size: 9px;
+  color: #FBA213;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav_keywords_gray {
+  color: #707070;
+  font-size: 9px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav img {
+  display: block;
+  margin: 9px auto 0;
+}
+
+/* 底部导航拦end */
+/* 头部导航 陈嘉辉 20190505 18:19 */
+/* 头部导航start */
+main {
+  width: 100%;
+  /* height: 618.5px; */
+  background-color: #FAFAFA;
+}
+
+main .empty {
+  width: 100%;
+  height: 29px;
+}
+
+nav {
+  height: 103.94px;
+  width: 100%;
+  /* background: red; */
+}
+
+.nav_center {
+  height: 103.94px;
+  width: 342.61px;
+  margin: 0 auto;
+  border-radius: 15px;
+  border: 0.5px solid #707070;
+}
+
+nav .empty {
+  width: 100%;
+  height: 9px;
+}
+
+.main_img_home {
+  height: 35.69px;
+  width: 100%;
+  /* background: red; */
+}
+
+.main_img {
+  height: 35.69px;
+  width: 307.16px;
+  margin: 0 auto;
+  background: #F9DD92;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* .main_img p {
+  font-size: 45px;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 4px;
+} */
+.location_home {
+  margin-top: 8px;
+  width: 100%;
+  height: 39.81px;
+}
+
+.location_center {
+  width: 304.48px;
+  height: 40.81px;
+  /* background: red; */
+  margin: 0 auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+
+.rank {
+  width: 251px;
+  height: 17px;
+  margin-left: 21px;
+  margin-top: 6.5px;
+}
+
+.rank_title {
+  font-size: 10px;
+  color: #4D4D4D;
+  position: relative;
+  top: -0.5px;
+  display: inline;
+}
+
+.rank_keywords {
+  font-size: 11px;
+  margin-left: 3px;
+  color: #7C7C7C;
+}
+
+.hotTask {
+  width: 251px;
+  height: 17px;
+  margin-left: 21px;
+  margin-top: 3px;
+}
+
+.hotTask_title {
+  font-size: 10px;
+  color: #4D4D4D;
+  position: relative;
+  top: -0.5px;
+  display: inline;
+}
+
+.hotTask_keywords {
+  font-size: 11px;
+  margin-left: 3px;
+  color: #7C7C7C;
+}
+
+/* 头部导航end */
+.big_words_home {
+  width: 100%;
+  height: 20px;
+  margin-top: 14px;
+}
+
+.big_words {
+  height: 20px;
+  width: 80px;
+  margin-left: 47px;
+}
+
+#big_words_up {
+  color: #FBA213;
+  font-size: 11px;
+}
+
+.big_words hr {
+  margin-top: 1px;
+  border: 0.5px solid #6A6A6A;
+  width: 80px;
+}
+
+/* 任务细节start */
+.event_home {
+  width: 100%;
+  /* height: 443px; */
+  margin-top: 29px;
+}
+
+.event {
+  margin: 0 auto;
+  position: relative;
+  left: 7px;
+  width: 323px;
+  height: 990px;
+}
+
+.event_dedtails {
+  width: 144.51px;
+  height: 130.56px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  float: left;
+  margin-right: 16.9px;
+  margin-bottom: 19px
+}
+
+.real_name {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: #5cc2ff;
+  position: absolute;
+  top: 5px;
+  left: 14px;
+  border-radius: 0 0 4px 4px;
+}
+
+.real_name p {
+  color: #feeff1;
+  /* font-weight: bold; */
+  font-size: 8.5px;
+  text-align: center;
+}
+
+.insurance {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: #f66778;
+  position: absolute;
+  left: 32px;
+  top: 5px;
+  border-radius: 0 0 4px 4px;
+}
+
+.insurance p {
+  color: #feeff1;
+  /* font-weight: bold; */
+  font-size: 8.5px;
+  text-align: center;
+}
+
+.event_dedtails .empty {
+  width: 100%;
+  height: 5px;
+}
+
+.event_img {
+  width: 135.5px;
+  height: 34.87px;
+  background-color: #F9DD92;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.money {
+  margin-top: 3px;
+  width: 100%;
+  height: 13px;
+}
+
+.name_home {
+  width: 40px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 4px;
+  float: left;
+}
+
+.Name_LegalTimes .name, .word_times {
+  font-size: 10px;
+  color: #878B8F;
+  position: relative;
+  bottom: 1.5px;
+}
+
+.money p {
+  color: #FBA213;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hr_up {
+  margin: 1px auto 0;
+  width: 127.08px;
+  border: 0.25px dashed #E6E6E6;
+}
+
+.hr_down {
+  margin: 1px auto 0;
+  width: 127.08px;
+  border: 0.25px dashed #E6E6E6;
+}
+
+.event_description {
+  width: 126px;
+  height: 28px;
+  margin: 2px auto 0;
+  overflow: hidden;
+}
+
+.event_description p {
+  font-size: 9px;
+  line-height: 14.2px;
+  color: #878B8F;
+}
+
+.event_keywords {
+  width: 126px;
+  height: 15px;
+  /* background: red; */
+  margin: 0 auto;
+}
+
+.event_keywords_time {
+  width: 60px;
+  height: 35px;
+  float: left;
+  /* background: blue; */
+}
+
+.event_keywords_time span {
+  display: inline-block;
+  font-size: 9px;
+  color: #6A6A6A;
+  position: relative;
+  top: -12px;
+}
+
+.event_keywords_project {
+  width: 70px;
+  height: 15px;
+  margin: 0 auto;
+}
+
+.event_keywords_project span {
+  margin-left: 3px;
+}
+
+.event_keywords_project img {
+  margin-top: 4px;
+}
+
+.event_keywords_project span {
+  display: inline-block;
+  font-size: 9px;
+  color: #6A6A6A;
+  position: relative;
+  top: -4px;
+}
+
+.exhibition_details_footer {
+  width: 134.05px;
+  height: 18.6px;
+  background: #F5F7FB;
+  margin: 5px auto 0;
+  position: relative;
+  border-radius: 2px;
+}
+
+.user_imformation {
+  width: 116px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.user_imformation_img {
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.legaltimes {
+  width: 44px;
+  height: 15px;
+  float: right;
+}
+
+.Name_LegalTimes {
+  width: 101px;
+  height: 15px;
+  float: right;
+}
+
+.times {
+  color: #FF8800;
+  font-size: 15px;
+}
+
+/* 任务细节end */
+
+
+
+
+
+
+
+
+/* 查看更多start */
+.The_more{
+  height: 40px;
+  width: 100%;
+  float: left;
+}
+.The_more_word{
+  color: #707070;
+  height: 40px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 40px;
+}
+/* 查看更多end */
+
+
+
+/*发布按钮*/
+.put_dusk {
+  width: 78.5px;
+  height: 30px;
+  background: #F5F7FB;
+  border: none;
+  color: #878B8F;
+  font-size: 11px;
+  font-weight: bold;
+  display: block;
+  border-radius: 30px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 42%;
+  bottom: 61px;
+}
+

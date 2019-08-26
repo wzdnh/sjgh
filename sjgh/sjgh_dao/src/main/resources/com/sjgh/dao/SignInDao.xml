@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--================================员工持久化操作映射==============================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.SignInDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="signIn" type="SignIn">
+        <id property="id" column="id" javaType="Integer"/>
+        <result property="user_id" column="user_id" javaType="Integer"/>
+        <result property="sign_time" column="sign_time" javaType="java.time.LocalDate"/>
+        <association property="user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="user_id" column="uid" javaType="Integer"/>
+            <result property="user_name" column="user_name" javaType="String"/>
+            <!--<result property="deposit" column="deposit" javaType="Integer"/>
+            <result property="authentication" column="authentication" javaType="Integer"/>
+            <result property="performance" column="performance" javaType="Integer"/>
+            <result property="head_portrait" column="head_portrait" javaType="String"/>-->
+        </association>
+    </resultMap>
+
+
+    <!--添加用户签到记录-->
+    <insert id="insert" parameterType="SignIn">
+        insert into sign_in (user_id, sign_time)
+        values(#{user_id}, #{sign_time})
+    </insert>
+
+    <!--删除所有该用户的记录-->
+    <delete id="deleteAll" parameterType="Integer">
+        delete from sign_in where user_id = #{user_id}
+    </delete>
+
+    <!--id必须与接口里的方法名一致，才能将接口与映射文件二者关联;parameterType：类型（因为已经在spring-dao.xml中设置的别名，所以不用写包名）-->
+    <!--传入用户当前登录的日期，和用户名，查看用户昨天的记录-->
+    <select id="selectDate" parameterType="SignIn" resultMap="signIn">
+        select *
+        from sign_in
+        where user_id = #{user_id} and sign_time = #{sign_time}
+    </select>
+
+    <!--统计用户连续签到的次数-->
+    <select id="statisticalContinuousCheckIn" parameterType="Integer" resultType="Integer">
+        select count(0)
+        from sign_in
+        where user_id = #{user_id}
+    </select>
+
+
+
+</mapper>

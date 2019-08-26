@@ -1,0 +1,630 @@
+body {
+  min-width: 375px;
+  min-height: 667px;
+  overflow-y: scroll;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 底部导航栏 陈嘉辉 20190504 18:01 */
+/* 底部导航栏start */
+/* 底部导航新修改 20190531 20:00 */
+#nav_bottom {
+  z-index: 999;
+  background: #F1F2F4;
+  width: 100%;
+  height: 48.5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.home,.sjdb,.swxz,.xzjy,.myself {
+  float: left;
+  width: 20%;
+  height: 48.5px;
+}
+/* 底部导航新修改 20190531 20:00 */
+.nav_keywords_orange {
+  font-size: 9px;
+  color: #FBA213;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav_keywords_gray {
+  color: #707070;
+  font-size: 9px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav img {
+  display: block;
+  margin: 9px auto 0;
+}
+
+/* 底部导航拦end */
+/* 轮播图start */
+header {
+  width: 100%;
+  height: 185px;
+  background-image: url(../img/index_top_background.png);
+  position: relative;
+}
+
+header .empty {
+  width: 100%;
+  height: 40px;
+}
+
+.header_banner {
+  width: 362.5px;
+  height: 165px;
+  margin: 0 auto;
+  /*background: blue;*/
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/*轮播部分*/
+
+.header_banner .LunBO{
+  width: 362.5px;
+  height: 165px;
+  margin: 0px auto;
+  position: relative;
+}
+
+.header_banner .LunBO .lunbo{
+  width: 362.5px;
+  height: 140px;
+  margin: 0px auto;
+  overflow: hidden;
+  border-radius: 8px;
+  /*background: deepskyblue;*/
+  border: 1px lightgrey solid;
+}
+
+.header_banner .LunBO .lunbo .banner-slide{
+  width: 362.5px;
+  height: 140px;
+  background-repeat:no-repeat;
+  float:left;
+  display: none;
+}
+
+
+.header_banner .LunBO .lunbo .slide-active{
+  display:block;
+}
+
+.lunbo_image{
+  width: 362.5px;
+  height: 140px;
+}
+
+/**/
+/*.LunBO .button{
+  transform:rotate(180deg);
+  left: 244px;
+  height: 80px;
+  width: 40px;
+  position: absolute;
+  z-index: 80;
+  top: 70px;
+  left: 0px;
+}
+
+.LunBO .next{
+  transform:rotate(0deg);
+  left:auto;
+  right:0;
+}
+
+.button:hover{
+  background-color:#333;
+  opacity: 0.8;
+  filter:alpha(opacity=80);
+}*/
+
+/*   下面的五个按钮        */
+.header_banner .LunBO .dots{
+  width: 220px;
+  height: 25px;
+  margin: 0px auto;
+}
+
+.header_banner .LunBO .dots span {
+  display: inline-block;
+  width: 25px;
+  height: 8px;
+  margin: 0px 5px;
+  /*鼠标变为小手*/
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: rgba(117, 117, 117, 0.4);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8) inset;
+}
+
+.header_banner .LunBO .dots span.active{
+  box-shadow: 0 0 0 2px rgba(7, 17, 27, 0.4) inset;
+}
+
+/*轮播结束*/
+
+
+/* 轮播图end */
+/* logo和退款流程start */
+.logo_backMoney {
+  width: 100%;
+  height: 183.76px;
+  background: #FAFAFA;
+  margin-top: 5px;
+}
+
+.logo_backMoney .empty {
+  width: 100%;
+  height: 23px;
+}
+
+.logoHome {
+  width: 111.85px;
+  height: 33.9px;
+  margin: auto;
+}
+
+.backMoney {
+  width: 313.6px;
+  height: 94.5px;
+  margin: 11px auto 0;
+  border-radius: 21px;
+  overflow: hidden;
+}
+
+/* logo和退款流程 */
+/* 三个部分公用的start */
+.index_big_title {
+  margin-top: 10px;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FF8800;
+}
+
+.index_small_title {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  color: #6A6A6A;
+}
+
+.index_small_title_line {
+  text-decoration: line-through;
+}
+
+/* 三个部分公用的end */
+/* 事件代办start */
+.task_sjdb {
+  width: 323px;
+  height: 510px;
+  margin: 0 auto;
+
+}
+
+.task_sjdb_deal {
+  width: 323px;
+  height: 445.8px;
+  padding-top: 15px;
+}
+
+.event_dedtails {
+  width: 144.51px;
+  height: 130.56px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.real_name {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: #5cc2ff;
+  position: absolute;
+  top: 5px;
+  left: 14px;
+  border-radius: 0 0 4px 4px;
+}
+
+.real_name p {
+  color: #feeff1;
+  /* font-weight: bold; */
+  font-size: 8.5px;
+  text-align: center;
+}
+
+.insurance {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background: #f66778;
+  position: absolute;
+  left: 32px;
+  top: 5px;
+  border-radius: 0 0 4px 4px;
+}
+
+.insurance p {
+  color: #feeff1;
+  /* font-weight: bold; */
+  font-size: 8.5px;
+  text-align: center;
+}
+
+.event_dedtails .empty {
+  width: 100%;
+  height: 5px;
+}
+
+.event_img {
+  width: 135.5px;
+  height: 34.87px;
+  background-color: #F9DD92;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.money {
+  margin-top: 3px;
+  width: 100%;
+  height: 13px;
+}
+
+.name_home {
+  width: 40px;
+  height: 10px;
+  display: inline-block;
+  margin-left: 4px;
+  float: left;
+}
+
+.Name_LegalTimes .name, .word_times {
+  font-size: 10px;
+  color: #878B8F;
+  position: relative;
+  bottom: 1.5px;
+}
+
+.money p {
+  color: #FBA213;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hr_up {
+  margin: 1px auto 0;
+  width: 127.08px;
+  border: 0.25px dashed #E6E6E6;
+}
+
+.hr_down {
+  margin: 1px auto 0;
+  width: 127.08px;
+  border: 0.25px dashed #E6E6E6;
+}
+
+.event_description {
+  width: 126px;
+  height: 28px;
+  margin: 2px auto 0;
+  overflow: hidden;
+}
+
+.event_description p {
+  font-size: 9px;
+  line-height: 14.2px;
+  color: #878B8F;
+  overflow: hidden;
+}
+
+.event_keywords {
+  width: 126px;
+  height: 15px;
+  /* background: red; */
+  margin: 0 auto;
+}
+
+.event_keywords_time {
+  width: 60px;
+  height: 35px;
+  float: left;
+  /* background: blue; */
+}
+
+.event_keywords_time span {
+  display: inline-block;
+  font-size: 9px;
+  color: #6A6A6A;
+  position: relative;
+  top: -12px;
+}
+
+.event_keywords_project {
+  width: 70px;
+  height: 15px;
+  margin: 0 auto;
+}
+
+.event_keywords_project span {
+  margin-left: 3px;
+}
+
+.event_keywords_project img {
+  margin-top: 4px;
+}
+
+.event_keywords_project span {
+  display: inline-block;
+  font-size: 9px;
+  color: #6A6A6A;
+  position: relative;
+  top: -4px;
+}
+
+.exhibition_details_footer {
+  width: 134.05px;
+  height: 18.6px;
+  background: #F5F7FB;
+  margin: 5px auto 0;
+  position: relative;
+  border-radius: 2px;
+}
+
+.user_imformation {
+  width: 116px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.user_imformation_img {
+  width: 15px;
+  height: 15px;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+.legaltimes {
+  width: 44px;
+  height: 15px;
+  float: right;
+}
+
+.Name_LegalTimes {
+  width: 101px;
+  height: 15px;
+  float: right;
+}
+
+.times {
+  color: #FF8800;
+  font-size: 15px;
+}
+
+/* 事件代办end */
+/* 失物招领，二手交易start */
+.task_swzl_home{
+  width: 100%;
+  /* height: 425.6px; */
+  background: #FAFAFA;
+}
+.task_swzl_home .empty{
+  width: 100%;
+  height: 0.1px;
+}
+.task_swzl{
+  width:323px ;
+  /* height: 425.6px; */
+  margin: 10px auto 0;
+}
+.task_swzl_deal{
+  padding-top: 15px;
+  width: 323px;
+  height: 567.3px;
+  overflow: hidden;
+}
+.task_all {
+  width: 144.517px;
+  height: 160.517px;
+  border-radius: 15px;
+  border: 1px solid #D9D9D9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-right: 14.8px;
+  margin-bottom: 19px;
+  overflow: hidden;
+  float: left;
+}
+
+.money_event {
+  width: 96.783px;
+  height: 20.375px;
+  margin: 2px auto 0;
+  /* background: red; */
+}
+
+.money {
+  color: #FBA213;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.money_home {
+  width: 30px;
+  height: 15.819px;
+  margin-top: 3.362px;
+  overflow: hidden;
+  float: left;
+}
+
+.small_event_home {
+  width: 62.218px;
+  height: 15.652px;
+  float: right;
+  overflow: hidden;
+  margin-top: 3.384px;
+}
+
+.event_keyword {
+  color: #878B8F;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 3px;
+  position: relative;
+  top: -1px;
+}
+
+.description_hr {
+  width: 126.285px;
+  border: 0.5px dashed #E6E6E6;
+  margin: 1px auto 0;
+}
+
+.description {
+  width: 115.291px;
+  height: 21.718px;
+  /* background: red; */
+  margin: 5.362px auto 0;
+  overflow: hidden;
+}
+
+.description p {
+  color: #878B8F;
+  font-size: 8px;
+  /* line-height: 1-px; */
+}
+
+.description_img {
+  width: 81.509px;
+  height: 73.733px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0.5px solid #707070;
+  margin: 4.558px auto 0;
+}
+
+.exhibition_details_footer {
+  width: 128.698px;
+  height: 17.964px;
+  background: #F5F7FB;
+  margin: 5.899px auto 0;
+  position: relative;
+  border-radius: 18px;
+}
+
+.user_imformation {
+  width: 110px;
+  height: 16.087px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.legaltimes {
+  float: right;
+  width: 41.7px;
+  height: 16px;
+}
+
+.Name_LegalTimes {
+  display: inline-block;
+  width: 91.705px;
+  height: 16.087px;
+  float: right;
+  position: relative;
+  top: 1px;
+}
+
+.Name_LegalTimes .name, .word_times {
+  font-size: 9px;
+  color: #878B8F;
+  position: relative;
+  top: -1px;
+}
+
+.times {
+  color: #FF8800;
+  font-weight: bold;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.user_imformation img {
+  position: relative;
+  top: 3px;
+}
+.task_swxz_home{
+  width: 100%;
+  /* height: 425.6px; */
+  background: white;
+}
+/* 失物招领，二手交易end */
+/* 关于赏金工会start */
+footer{
+  width: 100%;
+}
+footer p{
+  color: #6A6A6A;
+  font-size: 8px;
+  text-align: center;
+}
+footer .empty{
+  width: 100%;
+  height: 57.5px;
+}
+/* 关于赏金工会end */
+
+/*发布按钮*/
+.put_dusk {
+  width: 78.5px;
+  height: 30px;
+  background: #F5F7FB;
+  border: none;
+  color: #878B8F;
+  font-size: 11px;
+  font-weight: bold;
+  display: block;
+  border-radius: 30px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  left: 42%;
+  bottom: 61px;
+}

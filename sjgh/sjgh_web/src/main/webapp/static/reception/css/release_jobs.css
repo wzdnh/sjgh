@@ -1,0 +1,877 @@
+/*============发布页面css===================*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  width: 100%;
+  height: 33px;
+  background: #FAFAFA;
+}
+
+main {
+  width: 100%;
+  height: 872px;
+}
+
+header .center {
+  width: 1175px;
+  height: 33px;
+  margin: 0 auto;
+}
+
+.name_news {
+  width: 400px;
+  height: 33px;
+  float: left;
+}
+
+.name {
+  width: 171px;
+  height: 33px;
+  float: left;
+}
+
+.name span {
+  font-size: 20px;
+  color: #FF8900;
+  position: relative;
+  top: 2.5px;
+}
+
+.news {
+  width: 200px;
+  height: 38px;
+  float: left;
+}
+
+.news_word {
+  font-size: 20px;
+  color: #7C7C7C;
+}
+
+.news_number {
+  font-size: 20px;
+  color: #FF8900;
+  font-weight: bold;
+}
+
+.news img {
+  position: relative;
+  top: 2.5px;
+}
+
+.news span {
+  position: relative;
+  top: -2.5px;
+}
+
+.PersonalCenter_order {
+  float: right;
+  width: 185px;
+  height: 33px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal_center, .PersonalCenter_order img, .the_order {
+  float: left;
+}
+
+.PersonalCenter_order span {
+  font-size: 20px;
+  color: #7C7C7C;
+  position: relative;
+  top: 2.5px;
+}
+
+.PersonalCenter_order img {
+  position: relative;
+  top: 4px;
+}
+
+nav {
+  width: 100%;
+  height: 89px;
+  background: #FFFFFF;
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+nav .center {
+  width: 1175px;
+  height: 89px;
+  margin: 0 auto;
+}
+
+.logo_all {
+  width: 189px;
+  height: 89px;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  float: left;
+}
+
+.logo_all img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.class_keyword {
+  width: 564px;
+  height: 89px;
+  float: left;
+  margin-left: 75px;
+}
+
+.class_keyword li {
+  float: left;
+}
+
+.class_keyword_big {
+  width: 141px;
+  height: 89px;
+  position: relative;
+}
+
+.class_keyword_small {
+  width: 120px;
+  height: 42px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.class_keyword p {
+  color: #7C7C7C;
+  font-size: 30px;
+  text-align: center;
+}
+
+.class_keyword_big:hover {
+  border-bottom: 6px solid #F18216;
+  background: #F8F8F8;
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.2);
+}
+
+.search_all {
+  width: 220px;
+  height: 43px;
+  float: right;
+  margin-top: 23px;
+  /* background: red; */
+}
+
+.search_input {
+  float: left;
+  width: 129px;
+  height: 43px;
+}
+
+.search_all input {
+  background: #E6E6E6;
+  width: 129px;
+  height: 43px;
+  border: none;
+  border-radius: 80px 0 0 80px;
+}
+
+.search_button {
+  position: relative;
+  width: 91px;
+  height: 43px;
+  background: #FBA214;
+  float: left;
+  border-radius: 0 80px 80px 0;
+}
+
+.search_button img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.search_button:hover {
+  background: red;
+}
+
+.location_back {
+  width: 100%;
+  height: 58px;
+  background: #F8F8F8;
+  z-index: 5;
+}
+
+.location_back .center {
+  width: 1175px;
+  height: 58px;
+  margin: 0 auto;
+}
+
+.location {
+  width: 200px;
+  height: 58px;
+  float: left;
+  position: relative;
+}
+
+.location_center {
+  width: 196px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.location_center span {
+  font-size: 19px;
+  color: #7C7C7C;
+  margin-right: 6px;
+}
+
+.back {
+  width: 88px;
+  height: 32px;
+  float: right;
+  background: red;
+}
+
+.threePart_home {
+  width: 100%;
+  height: 667px;
+  background: #F8F8F8;
+}
+
+.threePart {
+  width: 1175px;
+  height: 667px;
+  margin: 0 auto;
+}
+
+.task_distribution {
+  width: 801px;
+  height: 667px;
+  float: left;
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+}
+
+.big_title {
+  width: 150px;
+  height: 36px;
+  margin-top: 12px;
+  margin-left: 61px;
+}
+
+.big_title span {
+  color: #FBA213;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.guider_savingProblem {
+  width: 356px;
+  height: 667px;
+  float: right;
+}
+
+.event_guide {
+  width: 356px;
+  height: 368px;
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+}
+
+.saving_problenm {
+  width: 356px;
+  height: 284px;
+  margin-top: 17px;
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+}
+
+.event_guide .big_words {
+  font-size: 25px;
+  font-weight: bold;
+  color: #7C7C7C;
+  display: inline-block;
+  margin-left: 33px;
+  margin-top: 14px;
+}
+
+.event_guide hr {
+  border: 0.5px solid #E6E6E6;
+  margin-top: 10px;
+  width: 290px;
+  text-align: center;
+  margin-left: 33px;
+}
+
+.event_guide ul {
+  margin-top: 17px;
+}
+
+.number {
+  margin-left: 33px;
+  color: #7C7C7C;
+  background: #ECEFF4;
+  font-size: 16px;
+  display: inline-block;
+  border-radius: 90px;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  margin-bottom: 11px;
+}
+
+.words {
+  font-size: 16px;
+  color: #7C7C7C;
+  font-weight: bold;
+  margin-left: 18px;
+}
+
+.logo_money_home {
+  width: 100%;
+  height: 84px;
+  position: relative;
+  margin-top: 5px;
+}
+
+.logo_money_home img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.location_home {
+  width: 100px;
+  height: 28px;
+}
+
+.consult {
+  width: 88px;
+  height: 28px;
+  margin: 0 auto;
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  position: relative;
+  border: 1px solid #707070;
+}
+
+.consult span {
+  font-size: 14px;
+  color: #84888C;
+  width: 56px;
+  height: 20px;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.consult:hover {
+  background: #FBA213;
+}
+
+.consult:hover .consult span {
+  color: #FFFFFF;
+}
+
+.consult_phone_home {
+  width: 356px;
+  height: 22px;
+  margin-top: 15px;
+}
+
+.consult_phone {
+  width: 210px;
+  height: 22px;
+  margin: 0 auto;
+  /* background: red; */
+}
+
+.consult_bigWords {
+  font-size: 16px;
+  color: #84888C;
+  font-weight: bold;
+}
+
+.phoneNumber {
+  font-size: 16px;
+  color: #FBA213;
+  font-weight: bold;
+  margin-left: 4px;
+}
+
+.question_home {
+  height: 93px;
+  width: 100%;
+  /* background: red; */
+  margin-top: 18px;
+}
+
+.question {
+  width: 289px;
+  height: 93px;
+  /* background: blue; */
+  margin: 0 auto;
+}
+
+.question span, p {
+  font-size: 14px;
+}
+
+.question_title span {
+  color: #84888C;
+}
+
+.question_title {
+  width: 74px;
+  height: 20px;
+  /* background: yellow; */
+}
+
+.question_detail {
+  width: 289px;
+  height: 65px;
+  /* background: orange; */
+  margin-top: 11px;
+}
+
+.question_detail p {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #84888C;
+}
+
+.task_distribution hr {
+  border: 0.5px solid #E6E6E6;
+  margin-top: 14px;
+}
+
+.goal_all {
+  width: 542px;
+  height: 542px;
+  /* background: red; */
+  margin: 40px auto 0;
+}
+
+.questionName {
+  font-size: 16px;
+  font-weight: bold;
+  color: #84888C;
+}
+
+.sjdb_home, .swzl_home, .swjy_home span {
+  color: #84888C;
+  font-size: 16px;
+  /* font-weight: lighter; */
+}
+
+.taskClass {
+  width: 542px;
+  height: 22px;
+  /* background: red; */
+}
+
+.taskClass ul {
+  display: inline-block;
+}
+
+.taskClass li {
+  float: left;
+}
+
+.sjdb_home, .swjy_home, .swzl_home {
+  margin-left: 30px;
+  position: relative;
+  top: -2px;
+}
+
+.sjdb_home span, .swjy_home span, .swzl_home span {
+  margin-left: 7px;
+  position: relative;
+  top: 2px;
+}
+
+.questionName {
+  position: relative;
+  top: -5px;
+}
+
+.questionName_img {
+  position: relative;
+  top: -5px;
+}
+
+.taskDetail span {
+  font-size: 16px;
+  color: #84888C;
+}
+
+.tastKeyWords_home {
+  position: relative;
+  left: -16px;
+  width: 542px;
+  height: 22px;
+  margin-top: 46px;
+  /* background: red; */
+}
+
+.swzl_keywords_home {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.findSomething_right {
+  margin-left: 25px;
+  display: inline-block;
+}
+
+span.task_keywords {
+  font-weight: bold;
+}
+
+.typeOfthing_home {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.typeOfthing {
+  height: 26px;
+  width: 100px;
+  color: #84888C;
+  background: #FFFFFF;
+  border: 1px solid #84888C;
+}
+
+.swzl_keywords_home span {
+  position: relative;
+  top: 1px;
+}
+
+.payOrNot_home {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.payOrNot_no_home {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.taskSign_home {
+  height: 22px;
+  position: relative;
+  top: -2px;
+  margin-left: 29px;
+  display: inline-block;
+}
+
+.taskSign_detail {
+  font-size: 16px;
+  color: #84888C;
+}
+
+.askSign_detail_b {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.taskSign {
+  height: 26px;
+  color: #84888C;
+  background: #FFFFFF;
+  border: 1px solid #84888C;
+}
+
+.done_time_home {
+  margin-top: 46px;
+  width: 542px;
+  height: 22px;
+}
+
+.deal_home {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.liveThing_otherThing {
+  margin-left: 26px;
+}
+
+.done_time_detail {
+  margin-left: 30px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+/*.done_time_detail input{
+  border: 1px solid #84888C;
+  width: 95px;
+  height: 22px;
+  color: #84888C;
+  border-radius: 4px 4px 4px 4px;
+  text-align: center;
+}*/
+.done_time_detail span {
+  position: relative;
+  top: 2px;
+  left: 7px;
+  font-size: 18px;
+}
+
+.money_amount {
+  margin-top: 46px;
+}
+
+.money_amountNumber {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.money_amountNumber span {
+  position: relative;
+  top: 2px;
+  left: 7px;
+  font-size: 18px;
+}
+
+.money_amountNumber input {
+  border: 1px solid #84888C;
+  width: 95px;
+  height: 22px;
+  color: #84888C;
+  border-radius: 4px 4px 4px 4px;
+  text-align: center;
+}
+
+.otherDemand_home {
+  margin-top: 46px;
+  width: 542px;
+  height: 169px;
+  /* background: red; */
+}
+
+.otherDemand_words {
+  float: left;
+}
+
+.otherDemand_detail {
+  display: inline-block;
+  margin-left: 33px;
+  width: 330px;
+  height: 200px;
+}
+.otherDemand_detail textarea{
+  border:none;
+  width: 300px;
+  height: 100px;
+  color: #84888C;
+  resize: none;
+  padding: 5px;
+  font-size: 16px;
+  outline-color:white;
+}
+.otherDemand_detail textarea::-webkit-input-placeholder{
+  color:rgba(132,136,140,0.6);
+}
+
+/*.otherDemand_detail input{
+  border: 1px solid #84888C;
+  width: 310px;
+  height: 167px;
+  color: #84888C;
+  border-radius: 4px 4px 4px 4px;
+}*/
+.ensure_submit {
+  background: #FBA213;
+  color: #FFFFFF;
+  text-align: center;
+  width: 102px;
+  height: 32px;
+  border: 1px solid #84888C;
+  font-weight: bold;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+  left: 235px;
+  top: 46px;
+}
+
+.ensure_submit:hover {
+  cursor: pointer;
+}
+
+/* 其他要求start */
+
+.otherDemand_detail{
+  display: inline-block;
+  margin-left: 33px;
+  width: 330px;
+  height: 200px;
+  border: 1px solid #84888C;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/*事件代办图片上传一系列处理开始*/
+.sjdb_pic_upload {
+  width: 100%;
+  height: 90px;
+}
+
+/*图片所在的盒子*/
+#sjdb_image-holder{
+	float: left;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/*图片*/
+.thumb-image{
+  width: 150px;
+  height: 150px;
+}
+
+.sjdb_pic_upload .fileUpload_div{
+	float: left;
+	width: 80px;
+    height: 80px;
+}
+
+/*图片上传*/
+#sjdb_fileUpload {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+}
+
+#sjdb_fileUpload input {
+  height: 0px;
+  width: 0px;
+}
+/*事件代办图片上传一系列处理结束*/
+
+
+/*失物招领图片上传一系列处理开始*/
+.swzl_pic_upload {
+  width: 100%;
+  height: 90px;
+}
+
+/*图片所在的盒子*/
+#swzl_image-holder {
+	float: left;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/*上传的图片*/
+#swzl_image-holder .swjy_thumb-image {
+  width: 150px;
+  height: 150px;
+}
+
+.swzl_pic_upload .fileUpload_div{
+	float: left;
+	width: 80px;
+  height: 80px;
+}
+
+/*图片上传*/
+#swzl_fileUpload {
+  width: 80px;
+  height: 80px;
+  /*display: inline-block;*/
+  position: absolute;
+  opacity: 0;
+}
+
+#swzl_fileUpload input {
+  height: 0px;
+  width: 0px;
+}
+/*失物招领图片上传一系列处理结束*/
+
+
+/*事物交易图片上传一系列处理开始*/
+.swjy_pic_upload {
+  width: 100%;
+  height: 90px;
+}
+
+/*图片所在的盒子*/
+#swjy_image-holder{
+	float: left;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/*图片*/
+.swjy_thumb-image{
+  width: 150px;
+  height: 150px;
+}
+
+.swjy_pic_upload .fileUpload_div{
+	float: left;
+	width: 80px;
+  height: 80px;
+}
+
+/*图片上传*/
+#swjy_fileUpload {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+}
+
+#swjy_fileUpload input {
+  height: 0px;
+  width: 0px;
+}
+/*事物交易图片上传一系列处理结束*/
+
+/* 其他要求end */
+/* 测试部分 */
+.a{
+  background: red;
+}

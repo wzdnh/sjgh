@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--================================广告记录持久化操作映射==============================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.AdvertisementDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="advertisement" type="Advertisement">
+        <id property="id" column="id" javaType="int"/>
+        <result property="school_id" column="school_id" javaType="Integer"/>
+        <result property="employee_id" column="employee_id" javaType="int"/>
+        <result property="money" column="money" javaType="Integer"/>
+        <result property="create_time" column="create_time" javaType="String"/>
+        <association property="school_er" column="school_id" javaType="School">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>
+        <!--关联员工表-->
+        <association property="employee_er" column="employee_id" javaType="Employee">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="employee_id" column="eid" javaType="int"/>
+            <result property="employee_name" column="ename" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <!--添加广告记录-->
+    <insert id="insert" parameterType="advertisement">
+        insert into advertisement
+        (school_id, employee_id, money)
+        values
+        (#{school_id}, #{employee_id}, #{money})
+    </insert>
+
+    <!--parameterType 参数类型-->
+    <!--查找所有的广告记录     ====所有的root级别=========-->
+    <select id="selectAll" parameterType="String" resultMap="advertisement">
+        select a.*, s.school_name sname, e.employee_name ename
+        from advertisement a
+                 left join school s on  s.school_id = a.school_id
+                 left join employee e on  e.employee_id = a.employee_id
+    </select>
+
+    <!--查找所有广告记录      一个学校范围内的-->
+    <select id="selectAllBySchool" parameterType="int" resultMap="advertisement">
+        select a.*, s.school_name sname, e.employee_name ename
+        from advertisement a
+                 left join school s on  s.school_id = a.school_id
+                 left join employee e on  e.employee_id = a.employee_id
+        where a.school_id = #{school_id}
+    </select>
+
+
+</mapper>

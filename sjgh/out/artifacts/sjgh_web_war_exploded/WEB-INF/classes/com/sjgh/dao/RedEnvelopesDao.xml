@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--=============================红包持久化操作映射配置=================================-->
+
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.RedEnvelopesDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="redEnvelopes" type="RedEnvelopes">
+        <id property="id" column="id" javaType="Integer"/>
+        <id property="userId" column="user_id" javaType="Integer"/>
+        <result property="user_name" column="user_name" javaType="String"/>
+        <result property="startTime" column="start_time" javaType="java.time.LocalDateTime"/>
+        <result property="endTime" column="enf_time" javaType="java.time.LocalDateTime"/>
+        <result property="state" column="state" javaType="Integer"/>
+        <result property="money" column="money" javaType="Double"/>
+        <result property="condition" column="condition" javaType="Double"/>
+        <!--<association property="school_er" column="school_id" javaType="School">
+            &lt;!&ndash;                            此处的字段必须得声明别名，用于区分&ndash;&gt;
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>-->
+    </resultMap>
+
+
+    <!--注册时后进行插入的代码-->
+    <insert id="insert" parameterType="RedEnvelopes">
+        insert into user (user_id, end_time, money, condition)
+        values (#{userId}, #{endTime}, #{money}, #{condition})
+    </insert>
+
+
+    <!--parameterType 参数类型-->
+    <!--查找用户所有的红包-->
+    <select id="selectAll" resultMap="redEnvelopes">
+        select *
+        from red_envelopes
+        where user_id = #{userId}
+    </select>
+
+
+    <!--修改状态码-->
+    <update id="updateState">
+        update user
+        set state = #{state}
+        where id = #{id}
+    </update>
+
+
+    <!--统计红包的个数-->
+    <select id="selectCount" resultType="Integer">
+        select count(0)
+        from red_envelopes
+        where user_id = #{userId}
+    </select>
+
+
+
+
+</mapper>

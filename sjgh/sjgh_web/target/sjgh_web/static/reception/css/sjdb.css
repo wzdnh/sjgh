@@ -1,0 +1,578 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  height: 197px;
+  width: 100%;
+  /* background: red; */
+}
+
+header .empty {
+  width: 100%;
+  height: 62px;
+  /* background: blue; */
+}
+
+.logo {
+  width: 205px;
+  height: 63px;
+  margin: 0 auto;
+}
+
+.loginSign_search {
+  width: 1042px;
+  height: 54px;
+  margin: 0 auto;
+  /* background: yellow; */
+}
+
+.search {
+  width: 521px;
+  height: 54px;
+  /* background: orange; */
+  float: left;
+}
+
+.login_sign {
+  width: 521px;
+  height: 54px;
+  /* background: pink; */
+  float: right;
+}
+
+.search_input {
+  margin-top: 16px;
+}
+
+.search_input input {
+  background: #E6E6E6;
+  width: 158px;
+  height: 38px;
+  border: none;
+  border-radius: 80px 0 0 80px;
+  float: left;
+}
+
+.search_img {
+  float: left;
+  width: 82px;
+  height: 38px;
+  position: relative;
+  background: #FBA214;
+  border-radius: 0 80px 80px 0;
+  z-index: 2;
+}
+
+.search_img img {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 3;
+}
+
+.search_img:hover {
+  background: red;
+}
+
+.login_sign {
+  width: 170px;
+  height: 30px;
+  float: right;
+  /* background: red; */
+}
+
+.login {
+  border: 3px solid #FF8900;
+  border-radius: 20px;
+  width: 64px;
+  height: 23px;
+  float: left;
+  margin-right: 11px;
+}
+
+.login p {
+  font-size: 17px;
+  text-align: center;
+  font-weight: bold;
+  color: #FF8900;
+}
+
+.login_center {
+  width: 13px;
+  height: 29px;
+  float: left;
+  margin-right: 1px;
+}
+
+.login_center p {
+  font-size: 22px;
+  color: #707070;
+  font-weight: lighter;
+}
+
+.sign {
+  height: 29px;
+  width: 73px;
+  float: right;
+}
+
+.sign p {
+  font-size: 18px;
+  color: #7C7C7C;
+  text-align: center;
+}
+
+.login:hover {
+  background: #FF8900;
+}
+
+.login:hover p {
+  color: white;
+}
+
+nav {
+  height: 277px;
+  width: 100%;
+  /* background: red; */
+}
+
+.nav_center {
+  height: 277px;
+  width: 1126px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+nav .big_keyword {
+  width: 636px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+nav .empty {
+  width: 100%;
+  height: 55px;
+}
+
+nav .big_keyword {
+  display: flex;
+  justify-content: space-between;
+}
+
+.big_keyword span.big_keyword_one {
+  color: #7C7C7C;
+  font-size: 28px;
+}
+
+.big_keyword span.big_keyword_two {
+  color: #7C7C7C;
+  font-size: 28px;
+}
+
+.main_img_home {
+  margin-top: 45px;
+  height: 73px;
+  width: 100%;
+  /* background: red; */
+}
+
+.main_img {
+  height: 73px;
+  width: 1008px;
+  margin: 0 auto;
+  background: red;
+  background: #F9DD92;
+  border-radius: 15px;
+}
+
+.main_img p {
+  font-size: 45px;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 4px;
+}
+
+.location_home {
+  margin-top: 14px;
+  width: 100%;
+  height: 34px;
+}
+
+.location_center {
+  width: 1008px;
+  height: 34px;
+  margin: 0 auto;
+}
+.location_center_title{
+  font-weight: bold;
+  font-size: 16px;
+  color: #84888C;
+  line-height: 34px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 43px;
+}
+.location_center_keywords{
+  font-size: 16px;
+  color: #84888C;
+  line-height: 34px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 60px;
+}
+.body_two {
+  width: 1103px;
+  height: 61px;
+  background: #F7F5F5;
+  margin: 29px auto 0;
+  border-radius: 20px;
+}
+
+.body_two ul {
+  display: inline-block;
+}
+
+.body_two li {
+  float: left;
+  margin-left: 50px;
+  color: #7C7C7C;
+  position: relative;
+  top: 19px;
+  left: 60px;
+  font-size: 19px;
+}
+
+.body_two span {
+  float: left;
+  font-size: 19px;
+  position: relative;
+  left: 88px;
+  top: 19px;
+}
+.big_words_home{
+  width: 100%;
+  height: 56px;
+}
+.big_words {
+  width: 1000px;
+  height: 56px;
+  margin: 0 auto;
+}
+.empty_a{
+  width: 100%;
+  height: 60px;
+}
+.big_words p {
+  color: #FBA213;
+  font-size: 35px;
+}
+
+.big_words hr {
+  /*20190516*/
+  width: 265px;
+  /*20190516*/
+  border: 1px solid #6A6A6A;
+}
+
+/*陈政 5-23 20.27*/
+.event_home {
+  width: 100%;
+  height: 1100px;
+  margin-top: 29px;
+}
+
+.event {
+  margin: 0 auto;
+  width: 1000px;
+  height: 1397px;
+  /* background: red; */
+}
+
+.event_dedtails {
+  width: 280px;
+  height: 256px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+/*20190516*/
+  margin-right: 53px;
+  margin-bottom: 23px;
+  /*20190516*/
+}
+
+.real_name {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: #5cc2ff;
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  border-radius: 0 0 4px 4px;
+}
+
+.real_name p {
+  color: #feeff1;
+  /* font-weight: bold; */
+  font-size: 17px;
+  margin-top: 1px;
+  text-align: center;
+}
+
+.insurance {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: #f66778;
+  position: absolute;
+  left: 49px;
+  top: 12px;
+  border-radius: 0 0 4px 4px;
+}
+
+.insurance p {
+  color: #feeff1;
+  /* font-weight: bold; */
+  font-size: 17px;
+  margin-top: 1px;
+  text-align: center;
+}
+
+.event_dedtails .empty {
+  width: 100px;
+  height: 12px;
+}
+
+.event_img {
+  width: 264px;
+  height: 68px;
+  background-color: #F9DD92;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.money {
+  margin-top: 3px;
+  width: 100%;
+  height: 32px;
+  /* background: red; */
+}
+
+.money p {
+  color: #FBA213;
+  font-size: 26px;
+  text-align: center;
+}
+
+.hr_up {
+  margin: 2px auto 5px;
+  width: 255px;
+  border: 0.5px dashed #E6E6E6;
+}
+
+.hr_down {
+  margin: 5px auto 0;
+  width: 255px;
+  border: 0.5px dashed #E6E6E6;
+}
+
+.event_description {
+  width: 219px;
+  height: 36px;
+  margin: 0 auto;
+}
+
+.event_description p {
+  font-size: 13px;
+  color: #878B8F;
+}
+
+.event_keywords {
+  width: 237px;
+  height: 35px;
+  /* background: red; */
+  margin: 5px auto 5px;
+}
+
+.event_keywords_time {
+  width: 151px;
+  height: 35px;
+  float: left;
+  /* background: blue; */
+}
+
+.event_keywords_time span{
+  display: inline-block;
+  font-size: 18px;
+  color:#6A6A6A;
+  position: relative;
+  top: -12px;
+}
+.event_keywords_project {
+  width: 130px;
+  height: 35px;
+  margin: 0 auto;
+}
+
+.event_keywords_project img{
+margin-top: 4px;
+}
+.event_keywords_project span{
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color:#6A6A6A;
+  position: relative;
+  top: 6px;
+}
+.exhibition_details_footer {
+  width: 245px;
+  height: 34px;
+  background: #F5F7FB;
+  margin: 0 auto 0;
+  position: relative;
+  border-radius: 2px;
+}
+
+.user_imformation {
+  width: 220px;
+  height: 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.legaltimes {
+  float: right;
+}
+
+.Name_LegalTimes {
+  display: inline-block;
+  width: 180px;
+  height: 20px;
+  float: right;
+  position: relative;
+  top: 1px;
+}
+
+.Name_LegalTimes .name, .word_times {
+  font-size: 13px;
+  color: #878B8F;
+}
+
+.times {
+  color: #FF8800;
+  font-weight: bold;
+}
+
+.next_part {
+  width: 622px;
+  height: 35px;
+  margin: 63px auto 63px;
+  /* background: red; */
+}
+
+.next_part ul {
+  display: inline-block;
+  float: left;
+}
+
+.next_part li {
+  display: inline-block;
+}
+
+.project_shell {
+  width: 39px;
+  height: 33px;
+  border: 1px solid #878B8F;
+  margin-left: 16px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.project_number {
+  width: 17px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.next_part p {
+  color: #878B8F;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*5-16
+陈嘉辉新加
+下拉界面
+*/
+.search_dynamic_preview{
+  font-size: 13px;
+  color: #878B8F;
+  line-height: 14px;
+  width:158px;
+}
+.search_dynamic_preview li{
+  margin-top: 4px;
+  width:158px;
+  overflow: hidden;
+}
+.search_dynamic_preview li:hover{
+  background: lightslategrey;
+  color: white;
+}
+
+
+/* 发布任务、退出登录start */
+.button_releaseJobs {
+  border-radius: 40px;
+  border: none;
+  color: white;
+  background: #ff5c00;
+  width: 120px;
+  height: 44px;
+  font-size: 18px;
+  font-weight: 500;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+}
+
+.button_logOut{
+  border-radius: 40px;
+  border: none;
+  color: #7C7C7C;
+  background: #e6e6e6;
+  width: 80px;
+  height: 35px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+}
+/* 发布任务、退出登录end */

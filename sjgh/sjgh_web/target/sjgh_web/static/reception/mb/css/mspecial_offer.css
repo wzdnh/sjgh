@@ -1,0 +1,212 @@
+body {
+  min-width: 375px;
+  min-height: 667px;
+  overflow-y: scroll;
+  background: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  -moz-outline-style: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 默认input的字体的颜色 */
+input::-webkit-input-placeholder {
+  color: #9d9fa6;
+}
+
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #9d9fa6;
+}
+
+input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #9d9fa6;
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #9d9fa6;
+}
+
+/* 去掉input右边的上下选择 */
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+/* 头部标题start */
+header {
+  width: 100%;
+  height: 30px;
+  background-color: white;
+}
+
+.top-title {
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+
+.top-title img {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+}
+
+.top-title .center {
+  color: #080808;
+  font-size: 17.1px;
+  display: block;
+  text-align: center;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+/* 头部标题end */
+/* 红包类名start */
+.big_title {
+  width: 75%;
+  height: 37px;
+  margin: 24px auto 0;
+  position: relative;
+}
+
+.red_packet {
+  width: 50%;
+  height: 37px;
+  background: #f75f6a;
+  border-radius: 50px;
+  float: left;
+}
+
+.red_packet_word {
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  color: white;
+  line-height: 37px;
+  font-weight: 550;
+}
+
+.other_packet {
+  position: absolute;
+  right: 0;
+  float: right;
+  border-radius: 50px;
+  border: 2px solid #f75f6a;
+  width: 61%;
+  height: 33px;
+}
+
+.other_packet_word {
+  line-height: 33px;
+  display: block;
+  color: #f75f6a;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* 红包类名end */
+/* 红包、其他奖励细节start */
+.red_packet_numberHome {
+  height: 28px;
+  width: 300px;
+  border-left: 4px solid #f75f6a;
+  margin-top: 24px;
+  margin-left: 8px;
+}
+
+.red_packet_big_word_one {
+  color: #333333;
+  font-size: 16.2px;
+  font-weight: 450;
+  margin-left: 25px;
+  position: relative;
+  top: 3px;
+}
+
+.red_packet_big_word_two {
+  color: #333333;
+  font-size: 16.2px;
+  font-weight: 450;
+  margin-left: 5px;
+  position: relative;
+  top: 3px;
+}
+
+.red_packet_big_number {
+  color: #f75f6a;
+  font-size: 18.2px;
+  font-weight: 600;
+  position: relative;
+  top: 3px;
+}
+
+.red_packet_detai_home {
+  width: 348px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+.red_packet_detail {
+  background-image: url(../img/newUser_money.png);
+  width: 348px;
+  height: 105px;
+  margin-bottom: 11px;
+  position: relative;
+  box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.2)
+}
+
+.red_packet_time {
+  position: absolute;
+  bottom: 15px;
+  left: 22px;
+  font-weight: 700;
+  font-size: 14.2px;
+  color: #ffffff;
+}
+
+.other_packet_detail {
+  background-image: url(../img/2Gweb.png);
+  width: 348px;
+  height: 105px;
+  margin-bottom: 11px;
+  position: relative;
+  box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.2)
+}
+
+.detail_webCode {
+  font-size: 12px;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  text-align: center;
+  color: #ff5a74;
+  font-weight: 500;
+}
+
+/* 红包、其他奖励细节end */

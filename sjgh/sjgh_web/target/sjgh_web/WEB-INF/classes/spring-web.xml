@@ -1,0 +1,57 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!--            表现层配置 SpringMvc       -->
+
+    <!--配置首页-->
+    <mvc:view-controller path="/" view-name="/reception/load" />
+
+    <!--引入-->
+    <import resource="spring-services.xml"/>
+    <!--开启自动扫描-->
+    <context:component-scan base-package="com.sjgh.controller"/>
+    <!--开启MVC注解驱动-->
+    <mvc:annotation-driven/>
+    <!--静态资源交由servlet处理；静态资源没必要交由spring MVC处理；，-->
+    <mvc:default-servlet-handler/>
+
+    <!--视图转换器； springMVC默认的调用的，所以不用声明id-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--指定转换格式-->
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <!--路径前后缀；为了隐藏页面，通常会放在web-inf下-->
+        <property name="prefix" value="/WEB-INF/pages"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+
+
+    <!-- 配置文件上传 -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 配置文件上传的最大体积 10M -->
+        <property name="maxUploadSize" value="10240000"></property>
+    </bean>
+
+
+    <!--             拦截器                 -->
+
+<!--    <mvc:interceptors>
+        <mvc:interceptor>
+            &lt;!&ndash;拦截路径      所有路径&ndash;&gt;
+            <mvc:mapping path="/"/>
+            &lt;!&ndash;用的哪个拦截器来完成这次拦截&ndash;&gt;
+            <bean class="com.sjgh.global.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+
+
+</beans>

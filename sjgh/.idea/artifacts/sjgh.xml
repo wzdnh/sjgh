@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="sjgh">
+    <output-path>$PROJECT_DIR$/../../wzdnh_war</output-path>
+    <root id="archive" name="sjgh.war">
+      <element id="artifact" artifact-name="sjgh_web:war exploded" />
+      <element id="dir-copy" path="$PROJECT_DIR$/sjgh_web/src/main/webapp" />
+    </root>
+  </artifact>
+</component>

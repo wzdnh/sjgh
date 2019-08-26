@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--=====================================代办事件评论持久化映射===================================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.CommentSJDBDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="commentSJDB" type="CommentSJDB">
+        <id property="id" column="id" javaType="int"/>
+        <result property="user_id" column="user_id" javaType="int"/>
+        <result property="create_time" column="create_time" javaType="String"/>
+        <result property="content" column="content" javaType="String"/>
+        <result property="sjdb_id" column="sjdb_id" javaType="int"/>
+        <result property="state" column="state" javaType="Integer"/>
+        <result property="reply_id" column="reply_id" javaType="Integer"/>
+        <result property="reply_state" column="reply_state" javaType="Integer"/>
+        <result property="commented_user_id" column="commented_user_id" javaType="Integer"/>
+        <association property="user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="user_id" column="uid" javaType="Integer"/>
+            <result property="user_name" column="user_name" javaType="String"/>
+            <!--<result property="deposit" column="deposit" javaType="Integer"/>
+            <result property="authentication" column="authentication" javaType="Integer"/>
+            <result property="performance" column="performance" javaType="Integer"/>-->
+            <result property="head_portrait" column="head_portrait" javaType="String"/>
+        </association>
+        <association property="sjdb_er" column="event_id" javaType="AgentEvent">
+            <!--                            此处的字段如果和上面申明的字段有一至的，就必须得声明别名，用于区分-->
+            <id property="event_id" column="aid" javaType="Integer"/>
+            <result property="road" column="road" javaType="String"/>
+        </association>
+    </resultMap>
+
+
+    <!--添加评论-->
+    <insert id="insert" parameterType="commentSJDB" >
+        insert into comment_sjdb (user_id, content, sjdb_id, state, reply_id, reply_state, commented_user_id)
+        values(#{user_id}, #{content}, #{sjdb_id}, #{state}, #{reply_id}, #{reply_state}, #{commented_user_id})
+    </insert>
+
+
+    <!--查询发布的代办事件信息的所有评论-->
+    <select id="selectAll" parameterType="int" resultMap="commentSJDB">
+        select c.*, u.user_id, u.user_name, u.head_portrait
+        from comment_sjdb c
+                 left join user u on  u.user_id = c.user_id
+        where c.sjdb_id = #{sjdb_id}
+        order by create_time desc
+    </select>
+
+
+
+    <!--用户查询他所有的产品下的所有评论-->
+    <select id="selectAllByUserId" parameterType="int" resultMap="commentSJDB">
+        select c.*, u.user_id, u.user_name, u.head_portrait, a.road
+        from comment_sjdb c
+                 left join user u on  u.user_id = c.user_id
+                 left join agent_event a on a.event_id = c.sjdb_id
+        where c.commented_user_id = #{commented_user_id}
+        order by create_time desc
+    </select>
+
+    <!--用户查询评论的和-->
+    <select id="selectSum" resultType="Integer">
+        select count(0)
+        from comment_sjdb
+        where commented_user_id = #{commented_user_id} and state = #{state}
+    </select>
+
+
+    <!--修改消息的状态码-->
+    <update id="updateState">
+        update comment_sjdb
+        set state = #{state}
+        where id = #{id}
+    </update>
+
+
+
+</mapper>

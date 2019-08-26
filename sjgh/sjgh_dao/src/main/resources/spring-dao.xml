@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启自动扫描  将类交由spring管理;扫描sjgh_dao下的所有包-->
+    <context:component-scan base-package="com.sjgh.dao"/>
+
+    <!--数据源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/shang_jin_gong_hui?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false"/>
+        <property name="username" value="***"/>
+        <!--测试时-->
+        <!--<property name="password" value="cz13985150811"/>-->
+        <!--服务器端-->
+        <property name="password" value="****"/>
+
+    </bean>
+
+    <!--Session工厂; 由mybatis-spring整合包提供的-->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--关联数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--设置别名-->
+        <property name="typeAliasesPackage" value="com.sjgh.entity"/>
+        <!-- 配置pageher分页拦截器 -->
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor">
+                    <property name="properties">
+                        <!--使用下面的方式配置参数，一行配置一个 -->
+                        <value>
+                            helperDialect=mysql
+                            reasonable=true
+                            supportMethodsArguments=true
+                            params=count=countSql
+                            autoRuntimeDialect=true
+                        </value>
+                    </property>
+                </bean>
+            </array>
+        </property>
+    </bean>
+
+    <!--映射器接口; 是被自动调用的，所以不需要设置id; 由mybatis-spring整合包提供的-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--字符串类型的-->
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
+        <!--自动扫描这个包下的所有的接口,并把接口与配置的映射文件关联，生成持久化操作对象
+            所以持久化操作对象所有的接口，映射文件都应该放在这个包里
+        -->
+        <property name="basePackage" value="com.sjgh.dao"/>
+    </bean>
+
+
+    <!--formData必须配置这里-->
+    <!-- 配置nultipartresolver,注意：id名必须这样写，不然会报错 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <property name="maxInMemorySize" value="10240000"></property>
+    </bean>
+
+</beans>

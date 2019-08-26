@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--================================员工持久化操作映射==============================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.EmployeeDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="employee" type="Employee">
+        <id property="employee_id" column="employee_id" javaType="int"/>
+        <result property="employee_name" column="employee_name" javaType="String"/>
+        <result property="head_portrait" column="head_portrait" javaType="String"/>
+        <result property="password" column="password" javaType="String"/>
+        <result property="school_id" column="school_id" javaType="Integer"/>
+        <result property="employee_phone" column="employee_phone" javaType="String"/>
+        <result property="id_number" column="id_number" javaType="String"/>
+        <result property="employee_sex" column="employee_sex" javaType="String"/>
+        <result property="jurisdiction" column="jurisdiction" javaType="int"/>
+        <result property="position" column="position" javaType="String"/>
+        <result property="create_time" column="create_time" javaType="String"/>
+        <association property="school_er" column="school_id" javaType="School">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <!--添加员工-->
+    <insert id="insert" parameterType="Employee" useGeneratedKeys="true" keyProperty="employee_id">
+        insert into employee (employee_name, password, head_portrait, school_id, employee_phone, id_number, employee_sex, jurisdiction, position)
+        values(#{employee_name}, #{password}, #{head_portrait},#{school_id}, #{employee_phone}, #{id_number}, #{employee_sex}, #{jurisdiction}, #{position})
+    </insert>
+
+    <!--删除员工  通过员工id-->
+    <delete id="delete" parameterType="int">
+        delete from employee where employee_id=#{employee_id}
+    </delete>
+
+    <!--id必须与接口里的方法名一致，才能将接口与映射文件二者关联;parameterType：类型（因为已经在spring-dao.xml中设置的别名，所以不用写包名）-->
+    <!--通过员工id来查找员工-->
+    <select id="select" parameterType="int" resultMap="employee">
+        select e.*, s.school_name sname, s.school_id sid
+        from employee e
+        left join school s on  s.school_id = e.school_id
+        where e.employee_id = #{employee_id}
+    </select>
+
+    <!--parameterType 参数类型-->
+    <!--查找所有员工      ====所有的root级别=========-->
+    <select id="selectAll" parameterType="String" resultMap="employee">
+        select e.*, s.school_name sname
+        from employee e
+        left join school s on  s.school_id = e.school_id
+    </select>
+
+    <!--查找所有员工      一个学校范围内的-->
+    <select id="selectAllBySchool" parameterType="Integer" resultMap="employee">
+        select e.*, s.school_name sname
+        from employee e
+        left join school s on s.school_id = e.school_id
+        where e.school_id = #{school_id}
+    </select>
+
+    <!--修改员工信息  通过员工id-->
+    <update id="update" parameterType="Employee">
+        update employee set  employee_name = #{employee_name},
+                         password = #{password},
+                         head_portrait = #{head_portrait} ,
+                         school_id = #{school_id},
+                         employee_phone = #{employee_phone},
+                         id_number = #{id_number},
+                         employee_sex = #{employee_sex},
+                         jurisdiction = #{jurisdiction},
+                         position = #{ position}
+                         where employee_id = #{employee_id}
+    </update>
+
+    <!--修改员工头像-->
+    <update id="updateHeadPortrait" parameterType="Employee">
+        update employee set  head_portrait = #{head_portrait}
+        where employee_id = #{employee_id}
+    </update>
+
+</mapper>

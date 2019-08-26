@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--=============================学生认证持久化操作映射配置=================================-->
+
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.StudentCertificationDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="studentCertification" type="StudentCertification">
+        <id property="id" column="id" javaType="Integer"/>
+        <result property="user_id" column="user_id" javaType="Integer"/>
+        <result property="name" column="name" javaType="String"/>
+        <result property="school_id" column="school_id" javaType="Integer"/>
+        <result property="student_id" column="student_id" javaType="Integer"/>
+        <result property="road" column="road" javaType="String"/>
+        <result property="create_time" column="create_time" javaType="java.time.LocalDateTime"/>
+        <result property="update_time" column="update_time" javaType="java.time.LocalDateTime"/>
+        <result property="state" column="state" javaType="Integer"/>
+        <result property="employee_id" column="employee_id" javaType="Integer"/>
+        <!--===================关联学校表=====================-->
+        <association property="school_er" column="school_id" javaType="School">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>
+        <!--===================关联员工表=====================-->
+        <association property="employee_er" column="employee_id" javaType="Employee">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="employee_id" column="eid" javaType="Integer"/>
+            <result property="employee_name" column="ename" javaType="String"/>
+        </association>
+        <association property="user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="user_id" column="uid" javaType="Integer"/>
+            <result property="user_name" column="user_name" javaType="String"/>
+        </association>
+
+    </resultMap>
+
+
+    <!--注册时后进行插入的代码-->
+    <insert id="insert" parameterType="StudentCertification">
+        insert into student_certification (user_id, name, school_id, student_id, road, state, employee_id)
+        values (#{user_id}, #{name}, #{school_id}, #{student_id}, #{road}, #{state}, #{employee_id})
+    </insert>
+
+
+    <!--修改状态码-->
+    <update id="updateState">
+        update student_certification
+        set state = #{state}, employee_id = #{employee_id}
+        where id = #{id}
+    </update>
+
+
+    <!--查询所有未处理的学生认证信息-->
+    <select id="selectAll" resultMap="studentCertification">
+        select s.*, u.user_name
+        from student_certification s
+        left join user u on u.user_id = s.user_id
+        where s.state = #{state} and s.school_id = #{school_id}
+    </select>
+
+
+    <!--查询用户已认证的记录-->
+    <select id="selectAuthentication" resultMap="studentCertification">
+        select *
+        from student_certification
+        where user_id = #{user_id} and state = #{state}
+        limit 1
+    </select>
+
+    <!--id必须与接口里的方法名一致，才能将接口与映射文件二者关联;parameterType：类型（因为已经在spring-dao.xml中设置的别名，所以不用写包名）-->
+    <!--通过用户名来查找用户-->
+    <!--<select id="select" parameterType="String" resultMap="user">
+        select *
+        from user
+        where user_name = #{user_name}
+    </select>-->
+
+
+    <!--parameterType 参数类型-->
+    <!--查找所有的用户-->
+    <!--<select id="selectAll" parameterType="String" resultMap="user">
+        select *
+        from user
+    </select>-->
+
+
+</mapper>

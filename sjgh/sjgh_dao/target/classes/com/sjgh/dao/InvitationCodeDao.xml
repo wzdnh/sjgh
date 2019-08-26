@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--================================邀请码持久化操作映射==============================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.InvitationCodeDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="invitationCode" type="InvitationCode">
+        <id property="id" column="id" javaType="int"/>
+        <result property="employee_name" column="employee_name" javaType="String"/>
+        <result property="head_portrait" column="head_portrait" javaType="int"/>
+    </resultMap>
+
+    <!--添加邀请码-->
+    <insert id="insert" parameterType="InvitationCode">
+        insert into invitation_code (invitation_code) values(#{invitation_code})
+    </insert>
+
+    <!--通过用户传入的邀请码，查看邀请人数-->
+    <select id="selectStatistics" parameterType="int" resultMap="invitationCode">
+        select count(0)
+        from invitation_code
+        where invitation_code = #{invitation_code};
+    </select>
+
+
+
+
+
+</mapper>

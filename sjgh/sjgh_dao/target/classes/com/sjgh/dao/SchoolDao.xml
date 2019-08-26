@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--=============================学校持久化操作映射配置===================================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.SchoolDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="school" type="School">
+        <id property="school_id" column="school_id" javaType="Integer"/>
+        <result property="school_name" column="school_name" javaType="String"/>
+        <result property="sheng_shi" column="sheng_shi" javaType="String"/>
+    </resultMap>
+
+
+    <!--添加学校-->
+    <insert id="insert" parameterType="School">
+        insert into school (school_name, sheng_shi)
+        values(#{school_name}, #{sheng_shi})
+    </insert>
+
+    <!--删除学校  通过学校id-->
+    <delete id="delete" parameterType="Integer">
+        delete from school where school_id=#{school_id}
+    </delete>
+
+    <!--id必须与接口里的方法名一致，才能将接口与映射文件二者关联;parameterType：类型（因为已经在spring-dao.xml中设置的别名，所以不用写包名）-->
+    <!--   通过学校id来查找学校-->
+    <select id="select" parameterType="Integer" resultMap="school">
+        select * from school where school_id = #{school_id}
+    </select>
+
+    <!--   通过学校名称来查找学校id-->
+    <select id="selectId" parameterType="String" resultType="Integer">
+        select school_id from school
+        where school_name = #{school_name}
+    </select>
+
+    <!--parameterType 参数类型-->
+    <!--查找所有的学校-->
+    <select id="selectAll" parameterType="String" resultMap="school">
+        select * from school
+    </select>
+
+    <!--修改学校信息  通过学校id-->
+    <update id="update" parameterType="School">
+        update school set  school_name = #{school_name},sheng_shi = #{sheng_shi} where school_id=#{school_id}
+    </update>
+
+
+</mapper>

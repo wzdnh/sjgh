@@ -1,0 +1,235 @@
+
+body {
+  min-width: 375px;
+  min-height: 667px;
+  overflow-y: scroll;
+  background: #f6f6f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 底部导航栏 陈嘉辉 20190504 18:01 */
+/* 底部导航新修改 20190531 20:00 */
+#nav_bottom {
+  z-index: 999;
+  background: #F1F2F4;
+  width: 100%;
+  height: 48.5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.home,.sjdb,.swxz,.xzjy,.myself {
+  float: left;
+  width: 20%;
+  height: 48.5px;
+}
+/* 底部导航新修改 20190531 20:00 */
+
+.nav_keywords_orange {
+  font-size: 9px;
+  color: #FBA213;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav_keywords_gray {
+  color: #707070;
+  font-size: 9px;
+  m font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav img {
+  display: block;
+  margin: 9px auto 0;
+}
+
+/* 底部导航拦end */
+/* 姓名头像关键信息start */
+.name_Userface {
+  width: 100%;
+  height: 250px;
+  background-color: #f8d54f;
+}
+
+.name_Userface .empty {
+  height: 60px;
+  width: 100%;
+}
+
+.name_Userface_home {
+  width: 315px;
+  height: 66px;
+  margin: 0 auto;
+}
+
+.name {
+  width: 230px;
+  height: 66px;
+  float: left;
+}
+
+.user_name {
+  font-size: 22px;
+  color: #3b321a;
+  font-weight: 600;
+  display: block;
+}
+
+.modification {
+  font-size: 13px;
+  color: #f8d54f;
+  background: #430703;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.user_face {
+  float: right;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  background: white;
+  border-radius: 50%;
+}
+
+.big_keyWord {
+  width: 245px;
+  height: 49px;
+  display: flex;
+  margin: 0 auto ;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.big_keyWord .news, .progress_order, .red_packet {
+  width: 32px;
+  height: 39px;
+}
+.big_keyWord_number{
+  color: #3b321a;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+}
+.big_keyWord_word{
+  color: #3b321a;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+  display: block;
+}
+.advertising_big{
+  width: 312px;
+  height: 46px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+}
+.advertising_big p{
+  line-height: 46px;
+  font-size: 13px;
+  color: #707070;
+  font-weight: 600;
+  text-align: center;
+}
+.advertising_small{
+  width: 290px;
+  height: 5px;
+  background: #fdf2c2;
+  margin: 0 auto;
+  border-radius: 0 0 90px 90px;
+  position: relative;
+  top: -1px;
+}
+/* 姓名头像、关键信息end */
+
+/* 各个功能按键start */
+/* .empty_function_buton_top{
+  width: 100%;
+  height: 31px;
+  background:white;
+} */
+.function_buton_home{
+  width: 100%;
+  height: 186px;
+  background: white;
+}
+.function_buton{
+  width: 340px;
+  height: 186px;
+  margin: 0 auto ;
+}
+.function_buton_detail{
+  width: 85px;
+  height: 93px;
+  float: left;
+}
+.function_buton_detail .img_home {
+  margin: 22px auto 3.5px;
+  width: 30px;
+  height: 35px;
+}
+.function_buton_keyword{
+  color: #3b321a;
+  font-size: 11.5px;
+  display: block;
+  text-align: center;
+}
+/* 各个功能按键end */
+
+/* 客服start */
+.custumer_servive_home{
+  height: 60px;
+  width: 100%;
+  background: white;
+  margin-top: 9px;
+}
+.custumer_servive{
+  width: 330px;
+  height: 60px;
+  margin: 0 auto;
+}
+.custumer_servive_left{
+  margin-top: 11.25px;
+  float: left;
+}
+
+.custumer_servive p{
+  font-size: 14.3px;
+  color: #3b321a;
+  margin-left: 20px;
+  line-height: 60px;
+  float: left;
+}
+.custumer_servive_right{
+  margin-top: 13px;
+  float: right;
+}
+/* 客服end */

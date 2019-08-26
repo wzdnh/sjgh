@@ -1,0 +1,455 @@
+body {
+  min-width: 375px;
+  min-height: 667px;
+  background-color: #FAFAFA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 底部导航栏 陈嘉辉 20190504 18:01 */
+/* 底部导航新修改 20190531 20:00 */
+#nav_bottom {
+  z-index: 999;
+  background: #F1F2F4;
+  width: 100%;
+  height: 48.5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.home,.sjdb,.swxz,.xzjy,.myself {
+  float: left;
+  width: 20%;
+  height: 48.5px;
+}
+/* 底部导航新修改 20190531 20:00 */
+.nav_keywords_orange {
+  font-size: 9px;
+  color: #FBA213;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav_keywords_gray {
+  color: #707070;
+  font-size: 9px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav img {
+  display: block;
+  margin: 9px auto 0;
+}
+
+/* 底部导航拦end */
+/* logo宣传语start */
+main .empty {
+  width: 100%;
+  height: 46px;
+}
+
+.logoAndPublicity {
+  width: 303px;
+  height: 38px;
+  margin: 0 auto;
+}
+
+.Publicity_left {
+  display: inline-block;
+  font-size: 15px;
+  color: #FBA213;
+  float: left;
+  font-weight: bold;
+  margin-top: 9.5px;
+}
+
+.Publicity_right {
+  display: inline-block;
+  font-size: 15px;
+  color: #FBA213;
+  float: right;
+  font-weight: bold;
+  margin-top: 9.5px;
+}
+
+.logoAndPublicity img {
+  margin-left: 15px;
+}
+
+/* logo宣传语end */
+/* 任务要求start */
+.task_distribution {
+  width: 338.5px;
+  height: 381.5px;
+  margin: 20px auto 0;
+  box-shadow: 3px 3px 11px rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+}
+
+.big_title {
+  width: 100%;
+  height: 36px;
+  position: relative;
+}
+
+.big_title span {
+  color: #FBA213;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline;
+}
+
+.span_home {
+  width: 84px;
+  height: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.task_distribution hr {
+  border: 0.5px solid #E6E6E6;
+}
+
+.goal_all {
+  width: 319px;
+  height: 292px;
+  /* background: red; */
+  margin: 22px auto 0;
+}
+
+.questionName {
+  position: relative;
+  top: -6px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #84888C;
+}
+
+.sjdb_home, .swzl_home, .swjy_home span {
+  color: #84888C;
+  font-size: 13px;
+}
+
+.taskClass {
+  width: 309px;
+  height: 17px;
+  margin-left: 7px;
+}
+
+.taskClass ul {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+}
+
+.taskClass li {
+  float: left;
+}
+
+.sjdb_home, .swjy_home, .swzl_home {
+  position: relative;
+  top: -2px;
+}
+.sjdb_home{
+  margin-left: 6px;
+}
+.sjdb_home span, .swjy_home span, .swzl_home span {
+  margin-left: 3px;
+  margin-right: 3px;
+  position: relative;
+  /* top: 2px; */
+}
+
+.questionName_img {
+  position: relative;
+  top: -5px;
+}
+
+.taskDetail span {
+  font-size: 13px;
+  color: #84888C;
+}
+
+.tastKeyWords_home {
+  position: relative;
+margin-left: 7px;
+  width: 307px;
+  height: 17px;
+  margin-top: 19px;
+}
+
+.swzl_keywords_home {
+  display: inline-block;
+  margin-left: 3px;
+}
+
+.findSomething_right {
+  margin-left: 30px;
+  display: inline-block;
+}
+
+span.task_keywords {
+  font-weight: bold;
+}
+
+.typeOfthing_home {
+  display: inline-block;
+  margin-left: 9px;
+}
+
+.typeOfthing {
+  height: 18px;
+  width: 100px;
+  border-radius: 5px;
+  color: #84888C;
+  background: #FFFFFF;
+  border: 1px solid #84888C;
+}
+
+.swzl_keywords_home span {
+  position: relative;
+  top: 1px;
+}
+
+.payOrNot_home {
+  display: inline-block;
+  margin-left: 9px;
+}
+
+.payOrNot_no_home {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.taskSign_home {
+  height: 14px;
+  position: relative;
+  top: -2px;
+  margin-left: 6px;
+  display: inline-block;
+}
+
+.taskSign_detail {
+  font-size: 16px;
+  color: #84888C;
+}
+
+.askSign_detail_b {
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.taskSign {
+  height: 20px;
+  border-radius: 5px;
+  color: #84888C;
+  background: #FFFFFF;
+  border: 1px solid #84888C;
+}
+
+.done_time_home {
+  margin-top: 26px;
+  margin-left: 7px;
+  width: 309px;
+  height: 19px;
+}
+
+.deal_home {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.liveThing_otherThing {
+  margin-left: 1px;
+}
+
+.done_time_detail {
+  margin-left: 30px;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
+/*.done_time_detail input{
+  border: 1px solid #84888C;
+  width: 95px;
+  height: 22px;
+  color: #84888C;
+  border-radius: 4px 4px 4px 4px;
+  text-align: center;
+}*/
+.done_time_detail span {
+  position: relative;
+  top: 2px;
+  left: 7px;
+  font-size: 18px;
+}
+
+.money_amount {
+  margin-top: 19px;
+  margin-left: 7px;
+}
+
+.money_amountNumber {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.money_amountNumber span {
+  position: relative;
+  top: 2px;
+  left: 7px;
+  font-size: 18px;
+}
+
+.money_amountNumber input {
+  border: 1px solid #84888C;
+  width: 95px;
+  height: 18px;
+  color: #84888C;
+  border-radius: 4px 4px 4px 4px;
+  text-align: center;
+}
+
+.otherDemand_home {
+  margin-top: 19px;
+  width: 307px;
+  height: 119px;
+  position: relative;
+margin-left: 7px;
+}
+
+.otherDemand_words {
+  float: left;
+}
+
+
+
+/*.otherDemand_detail input{
+  border: 1px solid #84888C;
+  width: 310px;
+  height: 167px;
+  color: #84888C;
+  border-radius: 4px 4px 4px 4px;
+}*/
+.ensure_submit {
+  background: #FBA213;
+  color: #FFFFFF;
+  text-align: center;
+  width: 92px;
+  height: 26px;
+  border: 1px solid #84888C;
+  font-weight: bold;
+  border-radius: 5px 5px 5px 5px;
+  position: relative;
+left: 105px;
+top:  13px;
+font-size: 14px;
+font-weight: bold;
+}
+
+.ensure_submit:hover {
+  cursor: pointer;
+}
+
+/* 其他要求start */
+.otherDemand_detail {
+  position: relative;
+  left: 20px;
+  top: 6px;
+  width: 250px;
+  height: 96px;
+  border: 1px solid #84888C;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#pic_upload {
+  width: 100%;
+  height: 45px;
+  /* position: absolute; */
+}
+
+#fileUpload {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: red;
+  position: absolute;
+  z-index: 4;
+}
+
+#fileUpload input {
+  height: 100%;
+}
+.input_otherRequire{
+  color: #84888C;
+  font-size: 12px;
+  position: relative;
+  z-index: 6;
+  width: 250px;
+  height: 51px;
+  border: none;
+  resize:none;
+  padding-left: 3px;
+}
+/*图片所在的盒子*/
+#image-holder {
+  width: 50px;
+  height: 40px;
+  display: inline-block;
+  box-shadow: 1px 1px 2px #84888C;
+  margin-left: 15px;
+  margin-top: 5px;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  z-index: 5;
+}
+
+#swzl_image-holder {
+  float: right;
+  width: 100px;
+  height: 100px;
+  border: blue 2px solid;
+}
+
+/*图片*/
+.thumb-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 其他要求end */
+/* 任务要求end */
+/* 赔偿流程start */
+.payForIllegal{
+  width: 314px;
+  height: 94px;
+  border: 1px solid #84888C;
+  border-radius: 21px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+  margin: 20px auto 0 ;
+  overflow: hidden;
+}
+/* 赔偿流程end */

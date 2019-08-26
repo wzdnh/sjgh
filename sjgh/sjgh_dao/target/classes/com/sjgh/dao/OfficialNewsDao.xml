@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--=====================================代办事件评论持久化映射===================================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.OfficialNewsDao">
+
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="officialNews" type="OfficialNews">
+        <id property="id" column="id" javaType="int"/>
+        <result property="user_id" column="user_id" javaType="int"/>
+        <result property="receipt_user_id" column="receipt_user_id" javaType="int"/>
+        <result property="title" column="title" javaType="String"/>
+        <result property="content" column="content" javaType="String"/>
+        <result property="create_time" column="create_time" javaType="java.time.LocalDateTime"/>
+        <result property="employee_id" column="employee_id" javaType="Integer"/>
+        <result property="state" column="state" javaType="Integer"/>
+        <result property="road" column="road" javaType="String"/>
+        <association property="user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="user_id" column="uid" javaType="Integer"/>
+            <result property="user_name" column="user_name" javaType="String"/>
+            <result property="head_portrait" column="head_portrait" javaType="String"/>
+        </association>
+        <association property="employee_er" column="employee_id" javaType="Employee">
+            <!--                            此处的字段如果和上面申明的字段有一至的，就必须得声明别名，用于区分-->
+            <id property="employee_id" column="eid" javaType="Integer"/>
+            <result property="employee_name" column="employee_name" javaType="String"/>
+        </association>
+        <!--此处用于接单者外键关联的-->
+        <association property="receive_user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="receipt_user_id" column="ruid" javaType="Integer"/>
+            <result property="user_name" column="ruser_name" javaType="String"/>
+            <result property="head_portrait" column="rhead_portrait" javaType="String"/>
+        </association>
+    </resultMap>
+
+
+    <!--添加评论-->
+    <insert id="insert" parameterType="OfficialNews" >
+        insert into official_news (user_id, receipt_user_id, title, content, employee_id, state, road)
+        values(#{user_id}, #{receipt_user_id}, #{title}, #{content}, #{employee_id}, #{state}, #{road})
+    </insert>
+
+
+    <!--用户查询他所有的未删除的官方信息-->
+    <select id="selectAllByUserId" parameterType="int" resultMap="officialNews">
+        select o.*, u.user_id, u.user_name
+        from official_news o
+                 left join user u on  u.user_id = o.receipt_user_id
+        where o.user_id = #{user_id}
+        order by create_time desc
+    </select>
+
+    <!--用户查询评论的和-->
+    <select id="selectSum" resultType="Integer">
+        select count(0)
+        from official_news
+        where user_id = #{commented_user_id} and state = #{state}
+    </select>
+
+
+    <!--修改消息的状态码-->
+    <update id="updateState">
+        update official_news
+        set state = #{state}
+        where user_id = #{user_id}
+    </update>
+
+
+
+    <!--查询发布的代办事件信息的所有评论-->
+    <!--<select id="selectAll" parameterType="int" resultMap="commentSJDB">
+        select c.*, u.user_id, u.user_name, u.head_portrait
+        from comment_sjdb c
+                 left join user u on  u.user_id = c.user_id
+        where c.sjdb_id = #{sjdb_id}
+        order by create_time desc
+    </select>-->
+
+
+
+
+</mapper>

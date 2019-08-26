@@ -1,0 +1,50 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--                配置声明式事务                     -->
+
+
+    <!--引入-->
+    <import resource="spring-dao.xml"/>
+    <!--自动扫描-->
+    <context:component-scan base-package="com.sjgh.services"/>
+    <!--打开aspectj自动代理；使用声明式事务需要aspectj表达式-->
+    <aop:aspectj-autoproxy/>
+
+    <!--声明事务管理器-->
+    <bean id="transationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--关联数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--声明通知，指定事务管理器; 用的tx命名空间 -->
+    <tx:advice id="txAdvice" transaction-manager="transationManager">
+        <!--指定哪些方法需要怎样处理； 进行过滤-->
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="find*" read-only="true"/>
+            <tx:method name="search*" read-only="true"/>
+            <!--其余方法必须开启一个事务-->
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <aop:config>
+        <!--声明切入点-->
+        <aop:pointcut id="txpc" expression="execution(* com.sjgh.services.*.*(..))"/>
+        <!--关联-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txpc"/>
+    </aop:config>
+
+</beans>

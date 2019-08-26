@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--=====================================失物招领持久化操作===================================-->
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.LostAndFoundDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="lostAndFound" type="LostAndFound">
+        <id property="id" column="id" javaType="int"/>
+        <result property="user_id" column="user_id" javaType="Integer"/>
+        <result property="price" column="price" javaType="int"/>
+        <result property="start_time" column="start_time" javaType="java.time.LocalTime"/>
+        <result property="end_time" column="end_time" javaType="java.time.LocalTime"/>
+        <result property="event_describe" column="event_describe" javaType="String"/>
+        <result property="event_describe" column="event_describe" javaType="String"/>
+        <result property="create_time" column="create_time" javaType="String"/>
+        <result property="event_tags" column="event_tags" javaType="String"/>
+        <result property="school_id" column="school_id" javaType="Integer"/>
+        <result property="road" column="road" javaType="String"/>
+        <result property="free" column="free" javaType="int"/>
+        <result property="goods" column="goods" javaType="String"/>
+        <result property="state" column="state" javaType="int"/>
+        <result property="receive_id" column="receive_id" javaType="Integer"/>
+        <association property="user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="user_id" column="uid" javaType="String"/>
+            <result property="user_name" column="user_name" javaType="String"/>
+            <result property="deposit" column="deposit" javaType="Integer"/>
+            <result property="authentication" column="authentication" javaType="Integer"/>
+            <result property="performance" column="performance" javaType="Integer"/>
+            <result property="head_portrait" column="head_portrait" javaType="String"/>
+        </association>
+        <!--  接单者外键关联  -->
+        <association property="receive_user_er" column="user_id" javaType="User">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="receive_id" column="ruid" javaType="Integer"/>
+            <result property="user_name" column="ruser_name" javaType="String"/>
+            <result property="deposit" column="rdeposit" javaType="Integer"/>
+            <result property="authentication" column="rauthentication" javaType="Integer"/>
+            <result property="performance" column="rperformance" javaType="Integer"/>
+            <result property="head_portrait" column="rhead_portrait" javaType="String"/>
+        </association>
+        <association property="school_er" column="school_id" javaType="School">
+            <!--                            此处的字段如果和上面申明的字段有一至的，就必须得声明别名，用于区分-->
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="school_name" javaType="String"/>
+        </association>
+    </resultMap>
+
+    <!--添加失物招领信息-->
+    <insert id="insert" parameterType="lostAndFound" >
+        insert into lost_property_search (user_id, start_time, end_time, event_describe, event_tags, school_id, road, free, goods, state)
+        values(#{user_id}, #{start_time},#{end_time}, #{event_describe}, #{event_tags}, #{school_id}, #{road}, #{free}, #{goods}, #{state})
+    </insert>
+
+    <!--查询某个失物招领的详细信息-->
+    <select id="select" parameterType="int" resultMap="lostAndFound">
+        select l.*, s.school_name sname, s.school_id sid, u.user_id, u.user_name, u.deposit, u.authentication, u.performance, u.head_portrait
+        from lost_property_search l
+                 left join school s on  s.school_id = l.school_id
+                 left join user u on  u.user_id = l.user_id
+        where l.id = #{id}
+    </select>
+
+    <!--查找一个学校的部分失物招领信息    主页=========-->
+    <select id="selectAPartBySchool" parameterType="Integer" resultMap="lostAndFound">
+        select l.*, s.school_name sname, u.user_id, u.user_name, u.deposit, u.authentication, u.performance, u.head_portrait
+
+        from lost_property_search l
+                 left join school s on  s.school_id = l.school_id
+                 left join user u on  u.user_id = l.user_id
+
+        where l.school_id = #{school_id}
+        order by create_time desc
+        limit 0, 5
+    </select>
+
+    <!--查找一个学校的所有失物招领信息     二级页面=========-->
+    <select id="selectAllBySchool" parameterType="Integer" resultMap="lostAndFound">
+        select l.*, s.school_name sname, u.user_id, u.user_name, u.deposit, u.authentication, u.performance, u.head_portrait
+
+        from lost_property_search l
+                 left join school s on  s.school_id = l.school_id
+                 left join user u on  u.user_id = l.user_id
+        where l.school_id = #{school_id}
+        order by create_time
+    </select>
+
+
+    <!--模糊查询-->
+    <select id="fuzzySelect" resultMap="lostAndFound">
+        select l.*, s.school_name sname, u.user_id, u.user_name, u.deposit, u.authentication, u.performance, u.head_portrait
+        from lost_property_search l
+                 left join school s on  s.school_id = l.school_id
+                 left join user u on  u.user_id = l.user_id
+        where l.school_id = #{school_id}
+
+          and l.event_describe like concat('%',#{keyWords},'%')
+        order by create_time desc
+    </select>
+
+
+    <!--统计模糊查询的结果-->
+    <select id="fuzzySelectCount" resultType="Integer">
+        select count(0)
+        from lost_property_search
+        where school_id = #{school_id}
+          and event_describe like concat('%',#{keyWords},'%')
+    </select>
+
+    <!--搜索框搜索动态预览-->
+    <select id="selectDynamicPreview" resultType="String">
+        select event_describe
+        from lost_property_search l
+        where school_id = #{school_id}
+          and event_describe like concat('%',#{searchKeyword},'%')
+        order by create_time desc
+        limit 0, 6
+    </select>
+
+
+    <!--用户查找他指定状态的事件列表     -->
+    <select id="setlectUserEvent" resultMap="lostAndFound">
+        select l.*, u.user_id, u.head_portrait
+        from lost_property_search l
+                 left join user u on  u.user_id = l.user_id
+        where l.user_id = #{user_id} and l.state &lt;&gt; #{state}
+        order by create_time
+    </select>
+
+
+    <!--查找一个学校范围内的所有代办事件     -->
+    <select id="selectAllByLable" resultMap="lostAndFound">
+        select l.*, s.school_name sname, u.user_id, u.user_name, u.deposit, u.authentication, u.performance, u.head_portrait
+        from lost_property_search l
+                 left join school s on  s.school_id = l.school_id
+                 left join user u on  u.user_id = l.user_id
+        where l.school_id = #{school_id} and l.event_tags = #{lable}
+        order by l.optimization_time
+    </select>
+
+
+    <!--修改，此订单的状态码-->
+    <update id="updateState" >
+        update lost_property_search set  state = #{state}
+        where id = #{id}
+    </update>
+
+
+    <!--当有用户接单时，将此任务的接单者id，设为此用户的id-->
+    <update id="updateReceiveId" >
+        update lost_property_search set  receive_id = #{receive_id}
+        where id = #{id}
+    </update>
+
+
+    <!--用户查找他揭榜的事件列表     -->
+    <select id="selectReceiveUserEvent" resultMap="lostAndFound">
+        select l.*, u.user_id, u.head_portrait
+        from lost_property_search l
+                 left join user u on  u.user_id = l.receive_id
+        where l.receive_id = #{receive_user_id} and l.state &lt;&gt; #{state}
+        order by create_time
+    </select>
+
+
+</mapper>

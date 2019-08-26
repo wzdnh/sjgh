@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--=============================用户持久化操作映射配置=================================-->
+
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.UserDao">
+
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="user" type="User">
+        <id property="user_id" column="user_id" javaType="Integer"/>
+        <result property="user_name" column="user_name" javaType="String"/>
+        <result property="password" column="password" javaType="String"/>
+        <result property="school_id" column="school_id" javaType="Integer"/>
+        <result property="phone_number" column="phone_number" javaType="String"/>
+        <result property="deposit" column="deposit" javaType="Integer"/>
+        <result property="authentication" column="authentication" javaType="Integer"/>
+        <result property="performance" column="performance" javaType="Integer"/>
+        <result property="invitation_code" column="invitation_code" javaType="Integer"/>
+        <result property="head_portrait" column="head_portrait" javaType="String"/>
+        <result property="wechart" column="wechart" javaType="Integer"/>
+        <result property="qq" column="qq" javaType="Integer"/>
+        <result property="date_of_birth" column="date_of_birth" javaType="String"/>
+        <result property="jurisdiction_num" column="jurisdiction_num" javaType="int"/>
+        <result property="sex" column="sex" javaType="String"/>
+        <result property="create_time" column="create_time" javaType="String"/>
+        <result property="address" column="address" javaType="String"/>
+        <result property="email" column="email" javaType="String"/>
+        <result property="state" column="state" javaType="Integer"/>
+
+        <!--===================关联学校表=====================-->
+        <association property="school_er" column="school_id" javaType="School">
+            <!--                            此处的字段必须得声明别名，用于区分-->
+            <id property="school_id" column="sid" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>
+    </resultMap>
+
+
+    <!--注册时后进行插入的代码-->
+    <insert id="insert" parameterType="User">
+        insert into user (user_name, password, school_id, phone_number, head_portrait, sex)
+        values (#{user_name}, #{password}, #{school_id}, #{phone_number}, #{head_portrait}, #{sex})
+    </insert>
+
+    <!--删除用户  通过用户名-->
+    <delete id="delete" parameterType="String">
+        delete
+        from user
+        where user_name = #{user_name}
+    </delete>
+
+    <!--id必须与接口里的方法名一致，才能将接口与映射文件二者关联;parameterType：类型（因为已经在spring-dao.xml中设置的别名，所以不用写包名）-->
+    <!--通过用户名来查找用户-->
+    <select id="select" parameterType="String" resultMap="user">
+        select *
+        from user
+        where user_name = #{user_name}
+    </select>
+
+    <!--通过电话号码来查找用户-->
+    <select id="selectByPhone" parameterType="String" resultMap="user">
+        select *
+        from user
+        where phone_number = #{phone_number}
+    </select>
+
+
+
+
+    <!--parameterType 参数类型-->
+    <!--查找所有的用户-->
+    <select id="selectAll" parameterType="String" resultMap="user">
+        select *
+        from user
+    </select>
+
+    <!--修改用户信息  通过电话号码-->
+    <update id="update" parameterType="User">
+        update user
+        set user_name       = #{user_name},
+            head_portrait   = #{head_portrait},
+            address         = #{address},
+            email           = #{email},
+            sex             = #{sex}
+        where phone_number = #{phone_number}
+    </update>
+
+    <!--修改状态码-->
+    <update id="updateState">
+        update user
+        set state = #{state}
+        where user_id = #{user_id}
+    </update>
+
+
+    <!--修改用户是否通过学生认证-->
+    <update id="updateAuthentication">
+        update user
+        set authentication = #{state}
+        where user_id = #{user_id}
+    </update>
+
+
+    <!--修改用户是否押金缴纳-->
+    <update id="updateDeposit">
+        update user
+        set deposit = #{state}
+        where user_id = #{user_id}
+    </update>
+
+
+
+</mapper>

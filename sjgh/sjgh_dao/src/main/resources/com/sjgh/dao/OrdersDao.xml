@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.4//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--=============================用户持久化操作映射配置=================================-->
+
+
+<!--命名空间   为了区分-->
+<mapper namespace="com.sjgh.dao.OrdersDao">
+    <!--配置resultmap  id建议设置成实体类名的小写-->
+    <resultMap id="orders" type="Orders">
+        <id property="id" column="id" javaType="int"/>
+        <result property="type_id" column="type_id" javaType="int"/>
+        <result property="type" column="type" javaType="int"/>
+        <result property="invoice_user_id" column="invoice_user_id" javaType="Integer"/>
+        <result property="receipt_user_id" column="receipt_user_id" javaType="Integer"/>
+        <result property="state" column="state" javaType="int"/>
+        <result property="invoice_states" column="invoice_states" javaType="int"/>
+        <result property="receipt_states" column="receipt_states" javaType="int"/>
+        <result property="create_time" column="create_time" javaType="java.time.LocalDateTime"/>
+        <result property="update_time" column="update_time" javaType="java.time.LocalDateTime"/>
+<!--        &lt;!&ndash;===================关联学校表=====================&ndash;&gt;
+        <association property="user_er" column="id" javaType="User">
+            &lt;!&ndash;                            此处的字段必须得声明别名，用于区分&ndash;&gt;
+            <id property="username" column="uname" javaType="Integer"/>
+            <result property="school_name" column="sname" javaType="String"/>
+        </association>-->
+    </resultMap>
+
+
+    <!--插入用户之间的订单交易信息的代码-->
+    <insert id="insert" parameterType="Orders">
+        insert into orders (type_id, type, invoice_user_id, receipt_user_id, state, invoice_states, receipt_states)
+        values(#{type_id}, #{type}, #{invoice_user_id}, #{receipt_user_id}, #{state}, #{invoice_states}, #{receipt_states})
+    </insert>
+
+
+    <!--修改订单状态-->
+    <update id="updateStates">
+        update orders set state = #{state}
+        where id = #{id}
+    </update>
+
+    <!--修改发单者状态-->
+    <update id="updateInvoiceStates">
+        update orders set invoiceStates = #{invoiceStates}
+        where id = #{id}
+    </update>
+
+    <!--修改接单状态-->
+    <update id=" updateReceiptStates">
+        update orders set receiptStates = #{receiptStates}
+        where id = #{id}
+    </update>
+
+
+    <!--搜索发单者所有的订单-->
+    <select id="selectAllForInvoice" resultType="orders">
+        select *
+        from orders
+        where invoice_user_id = #{invoice_user_id}
+        order by create_time desc
+    </select>
+
+
+    <!--搜索接单者所有的订单-->
+    <select id="selectAllForReceipt" resultType="orders">
+        select *
+        from orders
+        where receipt_user_id = #{receipt_user_id}
+        order by create_time desc
+    </select>
+
+
+
+
+
+
+</mapper>

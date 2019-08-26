@@ -1,0 +1,433 @@
+body {
+  min-width: 375px;
+  min-height: 667px;
+  background-color: #FAFAFA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 底部导航栏 陈嘉辉 20190504 18:01 */
+/* 底部导航新修改 20190531 20:00 */
+#nav_bottom {
+  z-index: 999;
+  background: #F1F2F4;
+  width: 100%;
+  height: 48.5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.home,.sjdb,.swxz,.xzjy,.myself {
+  float: left;
+  width: 20%;
+  height: 48.5px;
+}
+/* 底部导航新修改 20190531 20:00 */
+
+.nav_keywords_orange {
+  font-size: 9px;
+  color: #FBA213;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav_keywords_gray {
+  color: #707070;
+  font-size: 9px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.nav img {
+  display: block;
+  margin: 9px auto 0;
+}
+
+/* 底部导航拦end */
+main {
+  width: 100%;
+}
+
+/* logo宣传语start */
+main .empty {
+  width: 100%;
+  height: 46px;
+}
+
+/* logo宣传语end */
+/* 返回和悬赏条件stat */
+.logoAndPublicity {
+  width: 303px;
+  height: 38px;
+  margin: 0 auto;
+}
+
+.Publicity_left {
+  display: inline-block;
+  font-size: 15px;
+  color: #FBA213;
+  float: left;
+  font-weight: bold;
+  margin-top: 9.5px;
+}
+
+.Publicity_right {
+  display: inline-block;
+  font-size: 15px;
+  color: #FBA213;
+  float: right;
+  font-weight: bold;
+  margin-top: 9.5px;
+}
+
+.logoAndPublicity img {
+  margin-left: 15px;
+}
+
+.back_receiveRequire {
+  width: 321px;
+  height: 77px;
+  margin: 0 auto;
+}
+
+/*.back {
+  width: 47px;
+  height: 16px;
+  float: left;
+  background: red;
+}*/
+
+.receiveRequire {
+  width: 149px;
+  height: 43px;
+  float: right;
+  /* background: red; */
+  margin-top: 12px;
+}
+
+.receiveRequire_bigWord {
+  display: block;
+  font-size: 19px;
+  text-align: center;
+  color: #FBA213;
+}
+
+.receiveRequire_line {
+  width: 148.24px;
+  border: 1.5px solid #6A6A6A;
+}
+
+.compensation {
+  width: 49.3px;
+  height: 16.1px;
+  background: #F66778;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 11px;
+  float: right;
+  margin-top: 2.5px;
+  margin-right: 2.5px;
+  position: relative;
+}
+
+.compensation_word_home {
+  width: 36px;
+  height: 13.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.compensation_word {
+  font-size: 9px;
+  font-weight: bold;
+  color: #FFFFFF;
+  display: block;
+}
+
+.verify {
+  width: 58px;
+  height: 15.52px;
+  background: #5CC2FF;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 11px;
+  float: right;
+  margin-top: 2.5px;
+  position: relative;
+}
+
+.verify_word_home {
+  width: 47.8px;
+  height: 13.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.verify_word {
+  font-size: 9px;
+  font-weight: bold;
+  color: #FFFFFF;
+  display: block;
+}
+
+/* 返回和悬赏条件end */
+/* 任务细节start */
+.event_home {
+  width: 100%;
+  height: 370px;
+  margin-top: 10px;
+}
+
+.event {
+  margin: 0 auto;
+  width: 323px;
+  height: 443px;
+}
+
+.task_all {
+  width: 321.36px;
+  height: 366.22px;
+  border-radius: 29px;
+  border: 1.5px solid #D9D9D9;
+  box-shadow: 1 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.money_event {
+  width: 212.277px;
+  height: 44.69px;
+  margin: 4.387px auto 0;
+  /* background: red; */
+}
+
+.money {
+  color: #FBA213;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.money_home {
+  width: 67.993px;
+  height: 36.885px;
+  margin-top: 7.374px;
+  overflow: hidden;
+  float: left;
+}
+
+.small_event_home {
+  width: 138.655px;
+  height: 36.519px;
+  float: right;
+  overflow: hidden;
+  margin-top: 7.422px;
+}
+
+.small_event_home img {
+  float: right;
+  margin-right: 5px;
+  margin-top: 7px;
+}
+
+.event_keyword {
+  color: #878B8F;
+  font-size: 21px;
+  font-weight: bold;
+  margin-top: 2px;
+  float: right;
+}
+
+.description_hr {
+  width: 276.985px;
+  border: 1.3px dashed #E6E6E6;
+  margin: 1px auto 0;
+}
+
+.description {
+  width: 255.047px;
+  height: 49.825px;
+  /* background: red; */
+  margin: 11.76px auto 0;
+  overflow: hidden;
+}
+
+.description p {
+  color: #878B8F;
+  font-size: 12px;
+  /* line-height: 1-px; */
+}
+
+.description_img {
+  width: 178.776px;
+  height: 161.721px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 0.5px solid #707070;
+  margin: 16px auto 0;
+}
+
+.exhibition_details_footer {
+  width: 282.277px;
+  height: 39.401px;
+  background: #F5F7FB;
+  margin: 12px auto 0;
+  position: relative;
+  border-radius: 18px;
+}
+
+.user_imformation {
+  width: 241.266px;
+  height: 35.284px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.legaltimes {
+  float: right;
+  width: 90px;
+  height: 16px;
+  display: inline-block;
+}
+
+.Name_LegalTimes {
+  display: inline-block;
+  width: 200px;
+  height: 22.6px;
+  float: right;
+  position: relative;
+  top: 7.5px;
+}
+
+.Name_LegalTimes .name, .word_times {
+  font-size: 15px;
+  color: #878B8F;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+}
+
+.times {
+  color: #FF8800;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.user_imformation img {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 任务细节end */
+.ensure_receive {
+  background: #FBA213;
+  border: none;
+  width: 120.5px;
+  height: 43.55px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 43px;
+
+}
+.button{
+  margin: 12px auto 0;
+  width: 120.5px;
+  height: 43.55px;
+}
+
+
+/*私信*/
+.background_letter {
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.personal_letter {
+  width: 58.5px;
+  height: 30px;
+  background: #50b5f1;
+  border: none;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+  border-radius: 30px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  right: 30px;
+  bottom: 61px;
+}
+
+.personal_letter_word_home {
+  width: 100%;
+  height: 48px;
+  border-top: 1px solid #e7e7e7;
+  position: fixed;
+  bottom: 270px;
+  padding-top: 13px;
+  padding-left: 3.4%;
+
+}
+
+
+.personal_letter_word_input {
+  float: left;
+  border: none;
+  width: 81.3%;
+  height: 35px;
+  background: #f3f3f3;
+  font-size: 13px;
+  color: black;
+  border-radius: 10px 0 0 10px;
+  line-height: 35px;
+  padding-left: 5px;
+  overflow: hidden;
+}
+
+.personal_letter_word_home button {
+  border-radius: 0 7px 7px 0;
+  color: white;
+  height: 35px;
+  width: 10%;
+  line-height: 35px;
+  float: left;
+  font-size: 13px;
+  background: #50b5f1;
+  border: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
