@@ -2,6 +2,11 @@
 赏金工会</br>
     一个交易有保障的大学生悬赏互助平台
 
+## 简介
+ * 技术： Spring、 Spring mvc、 MyBatis、 MySQL、 Tomcat、 Maven、 Jsp、 Servlet、 HTML、 css、 JavaScript、 jQuery、 jQuery Ajax、 PageHelper
+ * 开发工具： IDEA、 微信web开发工具
+ * 服务器： 阿里云服务器
+
 ## 项目实例
 * 1.PC端
 >   点击右侧链接访问网站  https://www.isjgh.com/
@@ -39,7 +44,7 @@
 ***
 
 ## 开发计划
-当前版本V3.2.0</br>
+当前版本V3.2.0,此项目从2018年一月份开始，一直到今天。由我（后端）和我另一个朋友（前端）完成的</br>
 目前项目仍在不断的优化完善中</br>
 V1.0.0完成以下目标：</br>
 
